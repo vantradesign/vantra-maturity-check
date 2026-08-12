@@ -27,12 +27,12 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "pnpm -r --parallel run typecheck",
+    "typecheck": "pnpm run build && pnpm -r --parallel run typecheck",
     "test": "pnpm --filter @vantra/maturity-core test",
     "test:coverage": "pnpm --filter @vantra/maturity-core test:coverage",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test:coverage && pnpm run build"
+    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test:coverage"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
