@@ -1,0 +1,192 @@
+{
+  "1": [
+    {
+      "id": "ver-l1-package",
+      "effort": "M",
+      "title": {
+        "en": "Ship the system as a versioned package",
+        "de": "Liefert das System als versioniertes Package aus"
+      },
+      "detail": {
+        "en": "Copy-and-paste distribution makes every later improvement impossible to deliver. A private registry package is the prerequisite for everything else in this category.",
+        "de": "Copy-and-paste-Verteilung macht jede spätere Verbesserung unzustellbar. Ein Package in einer privaten Registry ist die Voraussetzung für alles Weitere in dieser Kategorie."
+      }
+    },
+    {
+      "id": "ver-l1-semver",
+      "effort": "S",
+      "title": {
+        "en": "Adopt semantic versioning and write down what 'breaking' means for you",
+        "de": "Führt Semantic Versioning ein und definiert schriftlich, was „breaking“ bei euch heißt"
+      },
+      "detail": {
+        "en": "Is a visual change breaking? Is a renamed CSS class? Teams need your answer, not the general one.",
+        "de": "Ist eine visuelle Änderung breaking? Eine umbenannte CSS-Klasse? Teams brauchen eure Antwort, nicht die allgemeine."
+      }
+    },
+    {
+      "id": "ver-l1-changelog",
+      "effort": "S",
+      "title": {
+        "en": "Start a changelog with the next release",
+        "de": "Startet mit dem nächsten Release ein Changelog"
+      },
+      "detail": {
+        "en": "Do not backfill history. Three sections — added, changed, removed — from today onwards is enough to build the habit.",
+        "de": "Arbeitet die Historie nicht nach. Drei Abschnitte – hinzugefügt, geändert, entfernt – ab heute genügen, um die Gewohnheit aufzubauen."
+      }
+    }
+  ],
+  "2": [
+    {
+      "id": "ver-l2-automate-release",
+      "effort": "M",
+      "title": {
+        "en": "Automate the release so anyone can run it",
+        "de": "Automatisiert das Release, sodass es alle ausführen können"
+      },
+      "detail": {
+        "en": "A release that only one person can perform is an availability risk and an implicit veto on the delivery pace.",
+        "de": "Ein Release, das nur eine Person durchführen kann, ist ein Ausfallrisiko und ein implizites Veto auf das Liefertempo."
+      }
+    },
+    {
+      "id": "ver-l2-changesets",
+      "effort": "S",
+      "title": {
+        "en": "Declare the version impact inside the pull request",
+        "de": "Deklariert die Versionsauswirkung im Pull Request"
+      },
+      "detail": {
+        "en": "Changesets or a similar convention moves the SemVer decision to the person with the most context — the author — and makes it reviewable.",
+        "de": "Changesets oder eine ähnliche Konvention verlagert die SemVer-Entscheidung zur Person mit dem meisten Kontext – der Autorin – und macht sie reviewbar."
+      }
+    },
+    {
+      "id": "ver-l2-deprecation-policy",
+      "effort": "S",
+      "title": {
+        "en": "Publish a minimum deprecation window",
+        "de": "Veröffentlicht ein Mindest-Deprecation-Fenster"
+      },
+      "detail": {
+        "en": "Even \"deprecated APIs stay for two minor releases or 90 days\" changes the conversation from surprise to planning.",
+        "de": "Selbst „veraltete APIs bleiben zwei Minor-Releases oder 90 Tage“ verwandelt Überraschung in Planbarkeit."
+      }
+    }
+  ],
+  "3": [
+    {
+      "id": "ver-l3-deprecation-warnings",
+      "effort": "M",
+      "title": {
+        "en": "Emit deprecation warnings where developers already look",
+        "de": "Gebt Deprecation-Warnungen dort aus, wo Entwickler:innen ohnehin hinschauen"
+      },
+      "detail": {
+        "en": "A console or build-time warning reaches people that a release note never will — and it arrives at the moment they touch the code.",
+        "de": "Eine Konsolen- oder Buildzeit-Warnung erreicht Menschen, die eine Release-Note nie erreicht – und zwar genau dann, wenn sie den Code anfassen."
+      }
+    },
+    {
+      "id": "ver-l3-tokens",
+      "effort": "M",
+      "title": {
+        "en": "Make design tokens the shared source between design and code",
+        "de": "Macht Design-Tokens zur gemeinsamen Quelle von Design und Code"
+      },
+      "detail": {
+        "en": "One generated artefact feeding both the design library and the build removes the most common silent divergence.",
+        "de": "Ein generiertes Artefakt, das Design-Library und Build speist, beseitigt die häufigste stille Divergenz."
+      }
+    },
+    {
+      "id": "ver-l3-migration-guides",
+      "effort": "S",
+      "title": {
+        "en": "Write a migration guide with every major release",
+        "de": "Schreibt zu jedem Major-Release einen Migrationsleitfaden"
+      },
+      "detail": {
+        "en": "Before-and-after code for each breaking change. Written once by you instead of reverse-engineered by every consuming team.",
+        "de": "Vorher-Nachher-Code für jeden Breaking Change. Einmal von euch geschrieben, statt von jedem Team rekonstruiert."
+      }
+    }
+  ],
+  "4": [
+    {
+      "id": "ver-l4-codemods",
+      "effort": "L",
+      "title": {
+        "en": "Ship codemods for the mechanical parts of a migration",
+        "de": "Liefert Codemods für die mechanischen Teile einer Migration"
+      },
+      "detail": {
+        "en": "Renames and prop changes are automatable. Shipping the codemod with the major turns a two-week upgrade into an afternoon.",
+        "de": "Umbenennungen und Prop-Änderungen sind automatisierbar. Den Codemod mit dem Major auszuliefern macht aus zwei Wochen Upgrade einen Nachmittag."
+      }
+    },
+    {
+      "id": "ver-l4-version-inventory",
+      "effort": "M",
+      "title": {
+        "en": "Track which version each product actually runs",
+        "de": "Verfolgt, welche Version jedes Produkt tatsächlich einsetzt"
+      },
+      "detail": {
+        "en": "You cannot remove a deprecated API safely without this list — and with it, removal becomes a scheduled conversation.",
+        "de": "Ohne diese Liste lässt sich keine veraltete API sicher entfernen – mit ihr wird die Entfernung zu einem geplanten Gespräch."
+      }
+    },
+    {
+      "id": "ver-l4-visual-regression",
+      "effort": "M",
+      "title": {
+        "en": "Add visual regression checks to the release pipeline",
+        "de": "Ergänzt visuelle Regressionsprüfungen in der Release-Pipeline"
+      },
+      "detail": {
+        "en": "Most accidental breakage in a design system is visual, not typed. Snapshots catch what TypeScript cannot.",
+        "de": "Die meisten versehentlichen Brüche in einem Design System sind visuell, nicht typisiert. Snapshots fangen, was TypeScript nicht kann."
+      }
+    }
+  ],
+  "5": [
+    {
+      "id": "ver-l5-assisted-upgrades",
+      "effort": "L",
+      "title": {
+        "en": "Open the upgrade pull requests for your consumers",
+        "de": "Öffnet die Upgrade-Pull-Requests für eure Teams selbst"
+      },
+      "detail": {
+        "en": "Automated dependency bumps plus your codemods, raised by the system team, remove the last excuse for staying on an old major.",
+        "de": "Automatisierte Dependency-Bumps plus eure Codemods, eingereicht vom Systemteam, nehmen die letzte Ausrede, auf einem alten Major zu bleiben."
+      }
+    },
+    {
+      "id": "ver-l5-contract-tests",
+      "effort": "M",
+      "title": {
+        "en": "Verify the public API contract automatically",
+        "de": "Prüft den öffentlichen API-Vertrag automatisch"
+      },
+      "detail": {
+        "en": "An API report checked into the repository makes every unintended breaking change visible in the diff, before the release.",
+        "de": "Ein im Repository eingecheckter API-Report macht jeden ungewollten Breaking Change im Diff sichtbar – vor dem Release."
+      }
+    },
+    {
+      "id": "ver-l5-cadence",
+      "effort": "S",
+      "title": {
+        "en": "Publish a predictable release calendar",
+        "de": "Veröffentlicht einen verlässlichen Release-Kalender"
+      },
+      "detail": {
+        "en": "Predictable majors let product teams budget upgrade time in advance rather than reacting to your timing.",
+        "de": "Vorhersagbare Majors lassen Produktteams Upgrade-Zeit einplanen, statt auf euer Timing zu reagieren."
+      }
+    }
+  ]
+}

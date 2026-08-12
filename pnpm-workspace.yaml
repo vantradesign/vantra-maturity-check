@@ -1,0 +1,15 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+
+autoInstallPeers: true
+strictPeerDependencies: false
+
+# esbuild (via tsup and Vite) and the Nuxt/oxc toolchain ship platform-specific
+# binaries through postinstall scripts. Without these, the builds fail.
+allowBuilds:
+  esbuild: true
+  '@parcel/watcher': true
+  unrs-resolver: true
+  vue-demi: true
+  better-sqlite3: true

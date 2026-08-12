@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vantra.design/schema/vantra-maturity/questions.schema.json",
+  "title": "Vantra Maturity question set",
+  "description": "A single category's question file, as found in packages/core/src/catalogs/<catalog>/questions/<category>.json. Community question sets are validated against this file.",
+  "type": "array",
+  "minItems": 5,
+  "maxItems": 8,
+  "items": { "$ref": "#/$defs/question" },
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "description": "One string per supported locale.",
+      "properties": {
+        "en": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      },
+      "required": ["en", "de"],
+      "additionalProperties": { "type": "string" }
+    },
+    "answerOption": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Maturity points. Must be unique within a question."
+        },
+        "label": { "$ref": "#/$defs/localizedText" }
+      },
+      "required": ["id", "score", "label"],
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]{3}-[0-9]{2}$" },
+        "categoryId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "weight": {
+          "type": "integer",
+          "enum": [1, 2, 3],
+          "description": "1 = supporting signal, 2 = standard, 3 = load-bearing practice."
+        },
+        "prompt": { "$ref": "#/$defs/localizedText" },
+        "help": { "$ref": "#/$defs/localizedText" },
+        "allowNote": { "type": "boolean" },
+        "options": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/answerOption" }
+        }
+      },
+      "required": ["id", "categoryId", "weight", "prompt", "help", "allowNote", "options"],
+      "additionalProperties": false
+    }
+  }
+}

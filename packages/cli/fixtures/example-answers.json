@@ -1,0 +1,150 @@
+{
+  "tool": "vantra-maturity-check",
+  "toolVersion": "0.1.0",
+  "locale": "en",
+  "result": {
+    "catalogId": "design-system",
+    "catalogVersion": "1.0.0",
+    "completedAt": "2026-02-02T09:00:00.000Z",
+    "overall": {
+      "score": 2.75,
+      "level": 3,
+      "answered": 24,
+      "total": 24,
+      "completion": 1
+    },
+    "categories": [
+      {
+        "categoryId": "documentation",
+        "score": 4,
+        "answered": 6,
+        "total": 6,
+        "completion": 1,
+        "level": 4
+      },
+      {
+        "categoryId": "versioning",
+        "score": 2,
+        "answered": 6,
+        "total": 6,
+        "completion": 1,
+        "level": 2
+      },
+      {
+        "categoryId": "governance",
+        "score": 3,
+        "answered": 6,
+        "total": 6,
+        "completion": 1,
+        "level": 3
+      },
+      {
+        "categoryId": "adoption",
+        "score": 2,
+        "answered": 6,
+        "total": 6,
+        "completion": 1,
+        "level": 2
+      }
+    ]
+  },
+  "answers": {
+    "doc-01": {
+      "questionId": "doc-01",
+      "optionId": "all"
+    },
+    "doc-02": {
+      "questionId": "doc-02",
+      "optionId": "consistent"
+    },
+    "doc-03": {
+      "questionId": "doc-03",
+      "optionId": "complete"
+    },
+    "doc-04": {
+      "questionId": "doc-04",
+      "optionId": "hosted"
+    },
+    "doc-05": {
+      "questionId": "doc-05",
+      "optionId": "guide-tested"
+    },
+    "doc-06": {
+      "questionId": "doc-06",
+      "optionId": "generated"
+    },
+    "ver-01": {
+      "questionId": "ver-01",
+      "optionId": "git"
+    },
+    "ver-02": {
+      "questionId": "ver-02",
+      "optionId": "loose"
+    },
+    "ver-03": {
+      "questionId": "ver-03",
+      "optionId": "commits"
+    },
+    "ver-04": {
+      "questionId": "ver-04",
+      "optionId": "informal"
+    },
+    "ver-05": {
+      "questionId": "ver-05",
+      "optionId": "manual"
+    },
+    "ver-06": {
+      "questionId": "ver-06",
+      "optionId": "notes"
+    },
+    "gov-01": {
+      "questionId": "gov-01",
+      "optionId": "part-time",
+      "note": "Two designers and one engineer, 20% time each."
+    },
+    "gov-02": {
+      "questionId": "gov-02",
+      "optionId": "documented"
+    },
+    "gov-03": {
+      "questionId": "gov-03",
+      "optionId": "criteria"
+    },
+    "gov-04": {
+      "questionId": "gov-04",
+      "optionId": "checklist"
+    },
+    "gov-05": {
+      "questionId": "gov-05",
+      "optionId": "adr"
+    },
+    "gov-06": {
+      "questionId": "gov-06",
+      "optionId": "linting"
+    },
+    "ado-01": {
+      "questionId": "ado-01",
+      "optionId": "under50"
+    },
+    "ado-02": {
+      "questionId": "ado-02",
+      "optionId": "manual"
+    },
+    "ado-03": {
+      "questionId": "ado-03",
+      "optionId": "ondemand"
+    },
+    "ado-04": {
+      "questionId": "ado-04",
+      "optionId": "channel"
+    },
+    "ado-05": {
+      "questionId": "ado-05",
+      "optionId": "anecdotal"
+    },
+    "ado-06": {
+      "questionId": "ado-06",
+      "optionId": "tolerated"
+    }
+  }
+}

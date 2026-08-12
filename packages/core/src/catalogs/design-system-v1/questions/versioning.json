@@ -1,0 +1,335 @@
+[
+  {
+    "id": "ver-01",
+    "categoryId": "versioning",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How is the design system distributed to product teams?",
+      "de": "Wie wird das Design System an die Produktteams ausgeliefert?"
+    },
+    "help": {
+      "en": "Distribution decides everything downstream: you cannot version, deprecate or measure what teams copy and paste.",
+      "de": "Die Auslieferung entscheidet über alles Weitere: Was Teams kopieren und einfügen, lässt sich weder versionieren noch deprecaten noch messen."
+    },
+    "options": [
+      {
+        "id": "copy",
+        "score": 1,
+        "label": {
+          "en": "Copy and paste, or a shared folder",
+          "de": "Kopieren und Einfügen oder ein geteilter Ordner"
+        }
+      },
+      {
+        "id": "git",
+        "score": 2,
+        "label": {
+          "en": "A git submodule or a branch teams pull from",
+          "de": "Ein Git-Submodul oder ein Branch, den Teams ziehen"
+        }
+      },
+      {
+        "id": "package",
+        "score": 3,
+        "label": {
+          "en": "A versioned package from a registry",
+          "de": "Ein versioniertes Package aus einer Registry"
+        }
+      },
+      {
+        "id": "package-multi",
+        "score": 4,
+        "label": {
+          "en": "Versioned packages with a documented upgrade path per release",
+          "de": "Versionierte Packages mit dokumentiertem Upgrade-Pfad pro Release"
+        }
+      },
+      {
+        "id": "package-tracked",
+        "score": 5,
+        "label": {
+          "en": "Versioned packages, and you know which version each product runs",
+          "de": "Versionierte Packages, und ihr wisst, welche Version jedes Produkt einsetzt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ver-02",
+    "categoryId": "versioning",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How disciplined is your use of semantic versioning?",
+      "de": "Wie diszipliniert nutzt ihr Semantic Versioning?"
+    },
+    "help": {
+      "en": "SemVer is a promise about breakage. Its value comes from being kept every single time.",
+      "de": "SemVer ist ein Versprechen über Breaking Changes. Sein Wert entsteht dadurch, dass es jedes Mal gehalten wird."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": {
+          "en": "We do not version releases in a structured way",
+          "de": "Wir versionieren Releases nicht strukturiert"
+        }
+      },
+      {
+        "id": "loose",
+        "score": 2,
+        "label": {
+          "en": "We bump versions, but the increment is a judgement call",
+          "de": "Wir erhöhen Versionen, aber der Sprung ist Ermessenssache"
+        }
+      },
+      {
+        "id": "semver",
+        "score": 3,
+        "label": {
+          "en": "SemVer is applied deliberately by the releasing person",
+          "de": "SemVer wird von der releasenden Person bewusst angewendet"
+        }
+      },
+      {
+        "id": "semver-review",
+        "score": 4,
+        "label": {
+          "en": "SemVer is declared in the pull request and checked in review",
+          "de": "SemVer wird im Pull Request deklariert und im Review geprüft"
+        }
+      },
+      {
+        "id": "semver-automated",
+        "score": 5,
+        "label": {
+          "en": "Version bumps are derived automatically from changesets or commit metadata",
+          "de": "Versionssprünge werden automatisch aus Changesets oder Commit-Metadaten abgeleitet"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ver-03",
+    "categoryId": "versioning",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Do consumers get a changelog they can act on?",
+      "de": "Bekommen die Konsument:innen ein Changelog, mit dem sie arbeiten können?"
+    },
+    "help": {
+      "en": "\"What changed and do I have to do anything?\" — answered before anyone has to ask.",
+      "de": "„Was hat sich geändert, und muss ich etwas tun?“ – beantwortet, bevor jemand fragen muss."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": { "en": "No changelog", "de": "Kein Changelog" }
+      },
+      {
+        "id": "commits",
+        "score": 2,
+        "label": {
+          "en": "The git history is the changelog",
+          "de": "Die Git-Historie ist das Changelog"
+        }
+      },
+      {
+        "id": "manual",
+        "score": 3,
+        "label": {
+          "en": "A hand-written changelog per release",
+          "de": "Ein handgeschriebenes Changelog pro Release"
+        }
+      },
+      {
+        "id": "generated",
+        "score": 4,
+        "label": {
+          "en": "Generated per release and grouped by impact",
+          "de": "Pro Release generiert und nach Auswirkung gruppiert"
+        }
+      },
+      {
+        "id": "pushed",
+        "score": 5,
+        "label": {
+          "en": "Generated and actively pushed to consumers with upgrade notes",
+          "de": "Generiert und aktiv mit Upgrade-Hinweisen an die Teams verteilt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ver-04",
+    "categoryId": "versioning",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "Is there a deprecation policy with a defined window before removal?",
+      "de": "Gibt es eine Deprecation-Policy mit definiertem Zeitfenster vor der Entfernung?"
+    },
+    "help": {
+      "en": "A predictable removal window is what lets product teams plan instead of firefight.",
+      "de": "Ein vorhersagbares Entfernungsfenster ist das, was Produktteams planen statt löschen lässt."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": {
+          "en": "No policy — things are removed when they are removed",
+          "de": "Keine Policy – Dinge verschwinden, wenn sie verschwinden"
+        }
+      },
+      {
+        "id": "informal",
+        "score": 2,
+        "label": {
+          "en": "We announce removals informally, without a fixed period",
+          "de": "Wir kündigen Entfernungen informell an, ohne festen Zeitraum"
+        }
+      },
+      {
+        "id": "written",
+        "score": 3,
+        "label": {
+          "en": "A written policy with a minimum deprecation window",
+          "de": "Eine schriftliche Policy mit Mindest-Deprecation-Fenster"
+        }
+      },
+      {
+        "id": "signalled",
+        "score": 4,
+        "label": {
+          "en": "Written policy plus runtime or build-time deprecation warnings",
+          "de": "Schriftliche Policy plus Deprecation-Warnungen zur Laufzeit oder Buildzeit"
+        }
+      },
+      {
+        "id": "tracked",
+        "score": 5,
+        "label": {
+          "en": "Warnings plus tracking of who still uses the deprecated API before removal",
+          "de": "Warnungen plus Tracking, wer die veraltete API vor der Entfernung noch nutzt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ver-05",
+    "categoryId": "versioning",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "How well are the design source of truth (e.g. Figma library) and the code release kept in sync?",
+      "de": "Wie gut sind die Design-Quelle (z. B. Figma-Library) und das Code-Release synchron?"
+    },
+    "help": {
+      "en": "Two sources of truth that drift apart create the most expensive kind of rework: silent disagreement.",
+      "de": "Zwei Wahrheitsquellen, die auseinanderdriften, erzeugen die teuerste Art von Nacharbeit: stillen Widerspruch."
+    },
+    "options": [
+      {
+        "id": "drift",
+        "score": 1,
+        "label": {
+          "en": "They drift freely; nobody knows which one is current",
+          "de": "Sie driften frei; niemand weiß, welche aktuell ist"
+        }
+      },
+      {
+        "id": "manual",
+        "score": 2,
+        "label": {
+          "en": "Designers update the library when they remember to",
+          "de": "Designer:innen aktualisieren die Library, wenn sie daran denken"
+        }
+      },
+      {
+        "id": "paired",
+        "score": 3,
+        "label": {
+          "en": "Design and code changes are released as a pair by convention",
+          "de": "Design- und Code-Änderungen werden per Konvention gemeinsam released"
+        }
+      },
+      {
+        "id": "tokens",
+        "score": 4,
+        "label": {
+          "en": "Shared design tokens flow from one source into both",
+          "de": "Gemeinsame Design-Tokens fließen aus einer Quelle in beide"
+        }
+      },
+      {
+        "id": "automated",
+        "score": 5,
+        "label": {
+          "en": "Token pipeline plus an automated check that flags divergence",
+          "de": "Token-Pipeline plus automatisierte Prüfung, die Abweichungen meldet"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ver-06",
+    "categoryId": "versioning",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "What support do teams get when a major version requires them to change their code?",
+      "de": "Welche Unterstützung bekommen Teams, wenn eine Major-Version Codeänderungen erfordert?"
+    },
+    "help": {
+      "en": "Migration effort that is not budgeted by the system team is silently paid by every product team, several times over.",
+      "de": "Migrationsaufwand, den das Systemteam nicht einplant, zahlt still jedes Produktteam – mehrfach."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": {
+          "en": "None — each team figures it out",
+          "de": "Keine – jedes Team findet sich selbst zurecht"
+        }
+      },
+      {
+        "id": "notes",
+        "score": 2,
+        "label": {
+          "en": "A short note in the release description",
+          "de": "Ein kurzer Hinweis in der Release-Beschreibung"
+        }
+      },
+      {
+        "id": "guide",
+        "score": 3,
+        "label": {
+          "en": "A written migration guide per major version",
+          "de": "Ein schriftlicher Migrationsleitfaden pro Major-Version"
+        }
+      },
+      {
+        "id": "codemod",
+        "score": 4,
+        "label": {
+          "en": "Migration guide plus codemods for the mechanical parts",
+          "de": "Migrationsleitfaden plus Codemods für die mechanischen Teile"
+        }
+      },
+      {
+        "id": "assisted",
+        "score": 5,
+        "label": {
+          "en": "Codemods plus the system team opening the upgrade pull requests",
+          "de": "Codemods, und das Systemteam öffnet die Upgrade-Pull-Requests selbst"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,192 @@
+{
+  "1": [
+    {
+      "id": "doc-l1-template",
+      "effort": "S",
+      "title": {
+        "en": "Agree on one documentation template",
+        "de": "Einigt euch auf eine einzige Doku-Vorlage"
+      },
+      "detail": {
+        "en": "Five headings are enough: what it is for, when not to use it, props/API, accessibility, example. A template removes the blank-page problem that keeps docs from being written at all.",
+        "de": "Fünf Überschriften genügen: Wofür, wann nicht, Props/API, Accessibility, Beispiel. Eine Vorlage nimmt das Problem des leeren Blattes, an dem Doku meistens scheitert."
+      }
+    },
+    {
+      "id": "doc-l1-top-ten",
+      "effort": "M",
+      "title": {
+        "en": "Document your ten most-used components first",
+        "de": "Dokumentiert zuerst eure zehn meistgenutzten Komponenten"
+      },
+      "detail": {
+        "en": "Button, input, select, modal, table and their neighbours absorb most support questions. Covering them buys back the time you need for the rest.",
+        "de": "Button, Input, Select, Modal, Tabelle und ihre Nachbarn verursachen die meisten Supportfragen. Sie abzudecken erkauft euch die Zeit für den Rest."
+      }
+    },
+    {
+      "id": "doc-l1-single-home",
+      "effort": "S",
+      "title": {
+        "en": "Give documentation a single, linkable home",
+        "de": "Gebt der Doku ein einziges, verlinkbares Zuhause"
+      },
+      "detail": {
+        "en": "One URL, linked from the repository README and the team channel topic. Documentation spread over three tools reads as no documentation.",
+        "de": "Eine URL, verlinkt aus dem Repository-README und dem Kanal-Thema. Doku über drei Tools verteilt wirkt wie keine Doku."
+      }
+    }
+  ],
+  "2": [
+    {
+      "id": "doc-l2-dod",
+      "effort": "S",
+      "title": {
+        "en": "Put documentation into the definition of done",
+        "de": "Nehmt Dokumentation in die Definition of Done auf"
+      },
+      "detail": {
+        "en": "A component without docs is not finished. Stating it once, in writing, stops the backlog of undocumented components from growing while you catch up.",
+        "de": "Eine Komponente ohne Doku ist nicht fertig. Das einmal schriftlich festzuhalten verhindert, dass der Rückstand weiter wächst, während ihr aufholt."
+      }
+    },
+    {
+      "id": "doc-l2-a11y-section",
+      "effort": "M",
+      "title": {
+        "en": "Add an accessibility section to the template",
+        "de": "Ergänzt einen Accessibility-Abschnitt in der Vorlage"
+      },
+      "detail": {
+        "en": "Keyboard interaction, expected roles and known limitations. Writing down a limitation is far better than letting each team rediscover it.",
+        "de": "Tastaturbedienung, erwartete Rollen und bekannte Einschränkungen. Eine Einschränkung zu dokumentieren ist deutlich besser, als sie jedes Team neu entdecken zu lassen."
+      }
+    },
+    {
+      "id": "doc-l2-live-examples",
+      "effort": "M",
+      "title": {
+        "en": "Publish live examples people can open in a browser",
+        "de": "Veröffentlicht Live-Beispiele, die sich im Browser öffnen lassen"
+      },
+      "detail": {
+        "en": "A hosted component workshop removes the largest barrier to evaluation: having to install your package to see what it does.",
+        "de": "Eine gehostete Komponenten-Werkbank beseitigt die größte Hürde der Bewertung: das Package installieren zu müssen, um zu sehen, was es tut."
+      }
+    }
+  ],
+  "3": [
+    {
+      "id": "doc-l3-generate-api",
+      "effort": "M",
+      "title": {
+        "en": "Generate the API reference from source",
+        "de": "Generiert die API-Referenz aus dem Quellcode"
+      },
+      "detail": {
+        "en": "Hand-maintained prop tables drift within two releases. Generating them frees your writing time for guidance, which cannot be generated.",
+        "de": "Handgepflegte Prop-Tabellen driften binnen zwei Releases. Sie zu generieren schafft Schreibzeit für Guidance – und die lässt sich nicht generieren."
+      }
+    },
+    {
+      "id": "doc-l3-getting-started",
+      "effort": "S",
+      "title": {
+        "en": "Write a getting-started path and test it on the next team",
+        "de": "Schreibt einen Einstiegspfad und testet ihn am nächsten Team"
+      },
+      "detail": {
+        "en": "Watch someone follow it without helping them. Every question they ask out loud is a missing paragraph.",
+        "de": "Schaut jemandem beim Durcharbeiten zu, ohne zu helfen. Jede laut gestellte Frage ist ein fehlender Absatz."
+      }
+    },
+    {
+      "id": "doc-l3-antipatterns",
+      "effort": "M",
+      "title": {
+        "en": "Add real do's and don'ts from your own products",
+        "de": "Ergänzt echte Do's and Don'ts aus euren eigenen Produkten"
+      },
+      "detail": {
+        "en": "Screenshots of actual misuse teach faster than abstract rules — and they are free, because the misuse already exists.",
+        "de": "Screenshots echter Fehlnutzung lehren schneller als abstrakte Regeln – und sie kosten nichts, weil die Fehlnutzung bereits existiert."
+      }
+    }
+  ],
+  "4": [
+    {
+      "id": "doc-l4-ci-gate",
+      "effort": "M",
+      "title": {
+        "en": "Fail the build on missing or broken documentation",
+        "de": "Lasst den Build bei fehlender oder kaputter Doku fehlschlagen"
+      },
+      "detail": {
+        "en": "Missing sections, dead links and examples that no longer compile are all mechanically detectable. Automate the checks you are currently doing by eye.",
+        "de": "Fehlende Abschnitte, tote Links und nicht mehr kompilierende Beispiele sind maschinell erkennbar. Automatisiert die Prüfungen, die ihr heute mit dem Auge macht."
+      }
+    },
+    {
+      "id": "doc-l4-versioned-docs",
+      "effort": "M",
+      "title": {
+        "en": "Publish documentation per released version",
+        "de": "Veröffentlicht die Doku pro released Version"
+      },
+      "detail": {
+        "en": "Teams two majors behind currently read documentation that does not describe their code. Versioned docs remove a whole class of support tickets.",
+        "de": "Teams zwei Majors zurück lesen heute Doku, die ihren Code nicht beschreibt. Versionierte Doku eliminiert eine ganze Klasse von Supportfällen."
+      }
+    },
+    {
+      "id": "doc-l4-feedback",
+      "effort": "S",
+      "title": {
+        "en": "Collect page-level feedback and act on it monthly",
+        "de": "Sammelt Feedback pro Seite und arbeitet es monatlich ab"
+      },
+      "detail": {
+        "en": "A single \"was this helpful?\" control plus a monthly review turns your docs into a product with a backlog.",
+        "de": "Ein einzelnes „War das hilfreich?“ plus monatliche Auswertung macht aus eurer Doku ein Produkt mit Backlog."
+      }
+    }
+  ],
+  "5": [
+    {
+      "id": "doc-l5-usage-driven",
+      "effort": "M",
+      "title": {
+        "en": "Let usage data steer what you document next",
+        "de": "Lasst Nutzungsdaten steuern, was ihr als Nächstes dokumentiert"
+      },
+      "detail": {
+        "en": "Search terms with no results and the most-visited pages are a free content roadmap. Review them each quarter.",
+        "de": "Suchbegriffe ohne Treffer und die meistbesuchten Seiten sind eine kostenlose Content-Roadmap. Wertet sie quartalsweise aus."
+      }
+    },
+    {
+      "id": "doc-l5-contribution",
+      "effort": "M",
+      "title": {
+        "en": "Make external documentation contributions routine",
+        "de": "Macht Doku-Beiträge von außen zur Routine"
+      },
+      "detail": {
+        "en": "An \"edit this page\" link plus a two-day review promise moves documentation from a core-team duty to a shared asset.",
+        "de": "Ein „Diese Seite bearbeiten“-Link plus zwei Tage Review-Zusage macht aus einer Kernteam-Pflicht ein gemeinsames Gut."
+      }
+    },
+    {
+      "id": "doc-l5-share",
+      "effort": "L",
+      "title": {
+        "en": "Publish your documentation practice outward",
+        "de": "Veröffentlicht eure Doku-Praxis nach außen"
+      },
+      "detail": {
+        "en": "Open-sourcing the template and tooling attracts scrutiny you cannot buy, and it is the cheapest recruiting channel a system team has.",
+        "de": "Vorlage und Tooling offenzulegen bringt eine Prüfung, die man nicht kaufen kann – und ist der günstigste Recruiting-Kanal eines Systemteams."
+      }
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+[
+  {
+    "id": "doc-01",
+    "categoryId": "documentation",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How many of your released components have usage documentation (what it is for, when not to use it, props/API)?",
+      "de": "Wie viele eurer veröffentlichten Komponenten haben eine Nutzungsdokumentation (wofür sie da ist, wann nicht, Props/API)?"
+    },
+    "help": {
+      "en": "Coverage of usage docs is the single strongest predictor of whether teams adopt a component without asking the core team.",
+      "de": "Die Abdeckung mit Nutzungsdoku ist der stärkste Einzelindikator dafür, ob Teams eine Komponente ohne Rückfrage beim Kernteam übernehmen."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": {
+          "en": "Almost none — knowledge lives in people's heads and in chat threads",
+          "de": "Fast keine – das Wissen steckt in Köpfen und Chatverläufen"
+        }
+      },
+      {
+        "id": "some",
+        "score": 2,
+        "label": {
+          "en": "Some components, written when someone had time",
+          "de": "Einige Komponenten, geschrieben, wenn jemand Zeit hatte"
+        }
+      },
+      {
+        "id": "most",
+        "score": 3,
+        "label": {
+          "en": "Most components follow a documentation template",
+          "de": "Die meisten Komponenten folgen einer Doku-Vorlage"
+        }
+      },
+      {
+        "id": "all",
+        "score": 4,
+        "label": {
+          "en": "All components — docs are part of the definition of done",
+          "de": "Alle Komponenten – Doku ist Teil der Definition of Done"
+        }
+      },
+      {
+        "id": "enforced",
+        "score": 5,
+        "label": {
+          "en": "All components, and CI fails a release when docs are missing",
+          "de": "Alle Komponenten, und die CI bricht das Release ab, wenn Doku fehlt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "doc-02",
+    "categoryId": "documentation",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Do you document design guidance (do's and don'ts, content and layout rules) alongside the code API?",
+      "de": "Dokumentiert ihr Design-Guidance (Do's and Don'ts, Content- und Layout-Regeln) zusätzlich zur Code-API?"
+    },
+    "help": {
+      "en": "Prop tables tell developers how to call a component. Guidance tells everyone when it is the right one.",
+      "de": "Prop-Tabellen sagen Entwickler:innen, wie eine Komponente aufgerufen wird. Guidance sagt allen, wann sie die richtige ist."
+    },
+    "options": [
+      {
+        "id": "no",
+        "score": 1,
+        "label": { "en": "No, code API only", "de": "Nein, nur die Code-API" }
+      },
+      {
+        "id": "scattered",
+        "score": 2,
+        "label": {
+          "en": "Scattered across slide decks and Figma comments",
+          "de": "Verstreut in Präsentationen und Figma-Kommentaren"
+        }
+      },
+      {
+        "id": "partial",
+        "score": 3,
+        "label": {
+          "en": "In the docs site for the most-used components",
+          "de": "Auf der Doku-Site für die meistgenutzten Komponenten"
+        }
+      },
+      {
+        "id": "consistent",
+        "score": 4,
+        "label": {
+          "en": "Consistently, in a fixed structure per component",
+          "de": "Durchgängig, in einer festen Struktur pro Komponente"
+        }
+      },
+      {
+        "id": "reviewed",
+        "score": 5,
+        "label": {
+          "en": "Consistently, plus examples of real product usage and anti-patterns",
+          "de": "Durchgängig, plus Beispiele echter Produktnutzung und Anti-Patterns"
+        }
+      }
+    ]
+  },
+  {
+    "id": "doc-03",
+    "categoryId": "documentation",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "Is accessibility behaviour documented per component (keyboard interaction, roles, known limitations)?",
+      "de": "Ist das Accessibility-Verhalten pro Komponente dokumentiert (Tastaturbedienung, Rollen, bekannte Einschränkungen)?"
+    },
+    "help": {
+      "en": "Undocumented a11y behaviour is re-implemented — usually incorrectly — by every consuming team.",
+      "de": "Undokumentiertes A11y-Verhalten wird von jedem konsumierenden Team neu implementiert – meistens falsch."
+    },
+    "options": [
+      {
+        "id": "no",
+        "score": 1,
+        "label": { "en": "Not documented", "de": "Nicht dokumentiert" }
+      },
+      {
+        "id": "adhoc",
+        "score": 2,
+        "label": {
+          "en": "Mentioned occasionally when someone asked",
+          "de": "Gelegentlich erwähnt, wenn jemand gefragt hat"
+        }
+      },
+      {
+        "id": "section",
+        "score": 3,
+        "label": {
+          "en": "A dedicated accessibility section exists for most components",
+          "de": "Für die meisten Komponenten gibt es einen eigenen Accessibility-Abschnitt"
+        }
+      },
+      {
+        "id": "complete",
+        "score": 4,
+        "label": {
+          "en": "Complete, including keyboard maps and known limitations",
+          "de": "Vollständig, inklusive Tastaturbelegung und bekannter Einschränkungen"
+        }
+      },
+      {
+        "id": "tested",
+        "score": 5,
+        "label": {
+          "en": "Complete and backed by automated a11y tests referenced in the docs",
+          "de": "Vollständig und durch automatisierte A11y-Tests belegt, die in der Doku verlinkt sind"
+        }
+      }
+    ]
+  },
+  {
+    "id": "doc-04",
+    "categoryId": "documentation",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Can someone see and interact with a live example of a component without cloning your repository?",
+      "de": "Kann jemand ein Live-Beispiel einer Komponente sehen und ausprobieren, ohne euer Repository zu klonen?"
+    },
+    "help": {
+      "en": "A running example removes the largest single barrier to trying a component.",
+      "de": "Ein lauffähiges Beispiel beseitigt die größte einzelne Hürde, eine Komponente auszuprobieren."
+    },
+    "options": [
+      {
+        "id": "no",
+        "score": 1,
+        "label": {
+          "en": "No, examples exist only in the codebase",
+          "de": "Nein, Beispiele existieren nur im Code"
+        }
+      },
+      {
+        "id": "static",
+        "score": 2,
+        "label": {
+          "en": "Static screenshots and code snippets",
+          "de": "Statische Screenshots und Code-Snippets"
+        }
+      },
+      {
+        "id": "storybook-local",
+        "score": 3,
+        "label": {
+          "en": "A component workshop (e.g. Storybook) that runs locally",
+          "de": "Eine Komponenten-Werkbank (z. B. Storybook), die lokal läuft"
+        }
+      },
+      {
+        "id": "hosted",
+        "score": 4,
+        "label": {
+          "en": "A hosted docs site with live, editable examples",
+          "de": "Eine gehostete Doku-Site mit lebenden, editierbaren Beispielen"
+        }
+      },
+      {
+        "id": "hosted-versioned",
+        "score": 5,
+        "label": {
+          "en": "Hosted, editable, and available per released version",
+          "de": "Gehostet, editierbar und pro veröffentlichter Version verfügbar"
+        }
+      }
+    ]
+  },
+  {
+    "id": "doc-05",
+    "categoryId": "documentation",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Is there a written getting-started path for a new team that wants to use the design system?",
+      "de": "Gibt es einen schriftlichen Einstiegspfad für ein neues Team, das das Design System nutzen möchte?"
+    },
+    "help": {
+      "en": "Install, theme, first component, where to ask — the four things every new consumer needs on day one.",
+      "de": "Installation, Theming, erste Komponente, Anlaufstelle für Fragen – die vier Dinge, die jedes neue Team am ersten Tag braucht."
+    },
+    "options": [
+      {
+        "id": "no",
+        "score": 1,
+        "label": {
+          "en": "No, onboarding happens in a call with the core team",
+          "de": "Nein, Onboarding passiert in einem Call mit dem Kernteam"
+        }
+      },
+      {
+        "id": "readme",
+        "score": 2,
+        "label": {
+          "en": "A README with install instructions",
+          "de": "Ein README mit Installationsanleitung"
+        }
+      },
+      {
+        "id": "guide",
+        "score": 3,
+        "label": {
+          "en": "A written guide covering install, theming and a first component",
+          "de": "Eine schriftliche Anleitung zu Installation, Theming und erster Komponente"
+        }
+      },
+      {
+        "id": "guide-tested",
+        "score": 4,
+        "label": {
+          "en": "A guide that is walked through and corrected with each new team",
+          "de": "Eine Anleitung, die mit jedem neuen Team durchlaufen und korrigiert wird"
+        }
+      },
+      {
+        "id": "starter",
+        "score": 5,
+        "label": {
+          "en": "A guide plus a runnable starter template or scaffolding command",
+          "de": "Eine Anleitung plus lauffähiges Starter-Template oder Scaffolding-Befehl"
+        }
+      }
+    ]
+  },
+  {
+    "id": "doc-06",
+    "categoryId": "documentation",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "How do you keep documentation from going stale as the code changes?",
+      "de": "Wie verhindert ihr, dass die Dokumentation veraltet, während sich der Code ändert?"
+    },
+    "help": {
+      "en": "Stale documentation is worse than none: it is trusted and wrong.",
+      "de": "Veraltete Doku ist schlimmer als keine: Man vertraut ihr, und sie ist falsch."
+    },
+    "options": [
+      {
+        "id": "nothing",
+        "score": 1,
+        "label": {
+          "en": "Nothing specific — it drifts and we fix it when someone complains",
+          "de": "Nichts Bestimmtes – sie driftet, und wir korrigieren, wenn sich jemand beschwert"
+        }
+      },
+      {
+        "id": "cleanup",
+        "score": 2,
+        "label": {
+          "en": "Occasional cleanup sprints",
+          "de": "Gelegentliche Aufräum-Sprints"
+        }
+      },
+      {
+        "id": "review",
+        "score": 3,
+        "label": {
+          "en": "Docs changes are part of code review",
+          "de": "Doku-Änderungen sind Teil des Code-Reviews"
+        }
+      },
+      {
+        "id": "generated",
+        "score": 4,
+        "label": {
+          "en": "API docs are generated from source, prose has a named owner",
+          "de": "API-Doku wird aus dem Quellcode generiert, Fließtext hat feste Verantwortliche"
+        }
+      },
+      {
+        "id": "enforced",
+        "score": 5,
+        "label": {
+          "en": "Generated and enforced: broken links, missing sections and outdated examples fail CI",
+          "de": "Generiert und erzwungen: tote Links, fehlende Abschnitte und veraltete Beispiele lassen die CI fehlschlagen"
+        }
+      }
+    ]
+  }
+]

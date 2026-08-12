@@ -1,0 +1,320 @@
+[
+  {
+    "id": "ado-01",
+    "categoryId": "adoption",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "Roughly what share of your product interfaces is built with design-system components?",
+      "de": "Welcher Anteil eurer Produktoberflächen ist ungefähr mit Design-System-Komponenten gebaut?"
+    },
+    "help": {
+      "en": "Adoption share is the outcome metric. Everything else in this check is an input to it.",
+      "de": "Der Adoptionsanteil ist die Ergebnisgröße. Alles andere in diesem Check zahlt darauf ein."
+    },
+    "options": [
+      {
+        "id": "under25",
+        "score": 1,
+        "label": { "en": "Less than 25%", "de": "Weniger als 25 %" }
+      },
+      {
+        "id": "under50",
+        "score": 2,
+        "label": { "en": "Roughly 25–50%", "de": "Etwa 25–50 %" }
+      },
+      {
+        "id": "under75",
+        "score": 3,
+        "label": { "en": "Roughly 50–75%", "de": "Etwa 50–75 %" }
+      },
+      {
+        "id": "under90",
+        "score": 4,
+        "label": { "en": "Roughly 75–90%", "de": "Etwa 75–90 %" }
+      },
+      {
+        "id": "over90",
+        "score": 5,
+        "label": {
+          "en": "More than 90%, with documented exceptions",
+          "de": "Mehr als 90 %, mit dokumentierten Ausnahmen"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ado-02",
+    "categoryId": "adoption",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How do you know that number?",
+      "de": "Woher wisst ihr diese Zahl?"
+    },
+    "help": {
+      "en": "An estimated adoption rate cannot be steered. A measured one turns the system from a cost centre into a reportable asset.",
+      "de": "Eine geschätzte Adoptionsrate lässt sich nicht steuern. Eine gemessene macht aus dem System vom Kostenfaktor ein berichtbares Asset."
+    },
+    "options": [
+      {
+        "id": "guess",
+        "score": 1,
+        "label": { "en": "We are guessing", "de": "Wir schätzen" }
+      },
+      {
+        "id": "manual",
+        "score": 2,
+        "label": {
+          "en": "Someone counted manually, once",
+          "de": "Jemand hat einmal manuell gezählt"
+        }
+      },
+      {
+        "id": "periodic",
+        "score": 3,
+        "label": {
+          "en": "A periodic scan of the codebases",
+          "de": "Ein regelmäßiger Scan der Codebases"
+        }
+      },
+      {
+        "id": "automated",
+        "score": 4,
+        "label": {
+          "en": "Automated component usage analytics per product",
+          "de": "Automatisierte Komponenten-Nutzungsanalyse pro Produkt"
+        }
+      },
+      {
+        "id": "dashboard",
+        "score": 5,
+        "label": {
+          "en": "A live dashboard that leadership and product teams both look at",
+          "de": "Ein Live-Dashboard, auf das Leitung und Produktteams gleichermaßen schauen"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ado-03",
+    "categoryId": "adoption",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "What enablement do teams get beyond documentation (training, office hours, pairing)?",
+      "de": "Welche Befähigung bekommen Teams über die Dokumentation hinaus (Schulungen, Sprechstunden, Pairing)?"
+    },
+    "help": {
+      "en": "Documentation answers known questions. Enablement surfaces the questions people did not know to ask.",
+      "de": "Dokumentation beantwortet bekannte Fragen. Befähigung bringt die Fragen hervor, die niemand zu stellen wusste."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": { "en": "None", "de": "Keine" }
+      },
+      {
+        "id": "ondemand",
+        "score": 2,
+        "label": {
+          "en": "Ad-hoc help when someone reaches out",
+          "de": "Ad-hoc-Hilfe, wenn sich jemand meldet"
+        }
+      },
+      {
+        "id": "onboarding",
+        "score": 3,
+        "label": {
+          "en": "A structured onboarding session for new teams",
+          "de": "Eine strukturierte Onboarding-Session für neue Teams"
+        }
+      },
+      {
+        "id": "officehours",
+        "score": 4,
+        "label": {
+          "en": "Onboarding plus recurring office hours or pairing slots",
+          "de": "Onboarding plus wiederkehrende Sprechstunden oder Pairing-Slots"
+        }
+      },
+      {
+        "id": "programme",
+        "score": 5,
+        "label": {
+          "en": "A running enablement programme with champions embedded in the product teams",
+          "de": "Ein laufendes Enablement-Programm mit Champions in den Produktteams"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ado-04",
+    "categoryId": "adoption",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Where do consumers go when something is broken or missing, and how quickly do they get an answer?",
+      "de": "Wohin wenden sich Nutzende, wenn etwas kaputt ist oder fehlt – und wie schnell bekommen sie eine Antwort?"
+    },
+    "help": {
+      "en": "Support latency is the most direct signal of whether the system feels like a product or a favour.",
+      "de": "Die Reaktionszeit im Support ist das direkteste Signal dafür, ob sich das System wie ein Produkt oder wie ein Gefallen anfühlt."
+    },
+    "options": [
+      {
+        "id": "dm",
+        "score": 1,
+        "label": {
+          "en": "Direct messages to whoever they know",
+          "de": "Direktnachrichten an die Person, die sie kennen"
+        }
+      },
+      {
+        "id": "channel",
+        "score": 2,
+        "label": {
+          "en": "A shared channel, answers when someone is free",
+          "de": "Ein gemeinsamer Kanal, Antwort wenn jemand Zeit hat"
+        }
+      },
+      {
+        "id": "tracked",
+        "score": 3,
+        "label": {
+          "en": "A tracked issue queue with a named triager",
+          "de": "Eine getrackte Issue-Queue mit benannter Triage-Rolle"
+        }
+      },
+      {
+        "id": "sla",
+        "score": 4,
+        "label": {
+          "en": "A published response expectation that is usually met",
+          "de": "Eine veröffentlichte Reaktionszusage, die in der Regel eingehalten wird"
+        }
+      },
+      {
+        "id": "measured",
+        "score": 5,
+        "label": {
+          "en": "Response and resolution times are measured and reviewed",
+          "de": "Reaktions- und Lösungszeiten werden gemessen und ausgewertet"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ado-05",
+    "categoryId": "adoption",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "How do you handle teams overriding, forking or detaching components?",
+      "de": "Wie geht ihr damit um, wenn Teams Komponenten überschreiben, forken oder ablösen?"
+    },
+    "help": {
+      "en": "Overrides are data, not misbehaviour: each one marks a gap the system has not covered yet.",
+      "de": "Overrides sind Daten, kein Fehlverhalten: Jeder markiert eine Lücke, die das System noch nicht abdeckt."
+    },
+    "options": [
+      {
+        "id": "invisible",
+        "score": 1,
+        "label": {
+          "en": "We do not know it is happening",
+          "de": "Wir bekommen es gar nicht mit"
+        }
+      },
+      {
+        "id": "anecdotal",
+        "score": 2,
+        "label": {
+          "en": "We hear about it anecdotally",
+          "de": "Wir hören anekdotisch davon"
+        }
+      },
+      {
+        "id": "reviewed",
+        "score": 3,
+        "label": {
+          "en": "Overrides are visible in review and discussed",
+          "de": "Overrides sind im Review sichtbar und werden besprochen"
+        }
+      },
+      {
+        "id": "measured",
+        "score": 4,
+        "label": {
+          "en": "Override and detach rates are measured per product",
+          "de": "Override- und Detach-Raten werden pro Produkt gemessen"
+        }
+      },
+      {
+        "id": "feedback-loop",
+        "score": 5,
+        "label": {
+          "en": "Measured and routed back into the roadmap as feature requests",
+          "de": "Gemessen und als Feature-Wünsche zurück in die Roadmap gespielt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ado-06",
+    "categoryId": "adoption",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "How is the design system positioned by leadership?",
+      "de": "Wie wird das Design System von der Führungsebene positioniert?"
+    },
+    "help": {
+      "en": "Adoption stalls at the point where using the system costs a team more than ignoring it — that trade-off is set above the team.",
+      "de": "Adoption stockt an dem Punkt, an dem die Nutzung ein Team mehr kostet als das Ignorieren – dieser Trade-off wird oberhalb des Teams gesetzt."
+    },
+    "options": [
+      {
+        "id": "unknown",
+        "score": 1,
+        "label": {
+          "en": "Largely unknown outside the immediate teams",
+          "de": "Außerhalb der unmittelbaren Teams weitgehend unbekannt"
+        }
+      },
+      {
+        "id": "tolerated",
+        "score": 2,
+        "label": {
+          "en": "Tolerated as a nice-to-have",
+          "de": "Als Nice-to-have geduldet"
+        }
+      },
+      {
+        "id": "encouraged",
+        "score": 3,
+        "label": {
+          "en": "Actively encouraged, but optional",
+          "de": "Aktiv gefördert, aber optional"
+        }
+      },
+      {
+        "id": "expected",
+        "score": 4,
+        "label": {
+          "en": "The expected default, with deviations needing a reason",
+          "de": "Der erwartete Standard, Abweichungen brauchen eine Begründung"
+        }
+      },
+      {
+        "id": "strategic",
+        "score": 5,
+        "label": {
+          "en": "A tracked strategic asset with adoption goals in team objectives",
+          "de": "Ein verfolgtes strategisches Asset mit Adoptionszielen in den Teamzielen"
+        }
+      }
+    ]
+  }
+]

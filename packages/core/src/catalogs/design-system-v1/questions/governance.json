@@ -1,0 +1,338 @@
+[
+  {
+    "id": "gov-01",
+    "categoryId": "governance",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "Who owns the design system, and how is that ownership funded?",
+      "de": "Wem gehört das Design System, und wie ist diese Verantwortung finanziert?"
+    },
+    "help": {
+      "en": "Funded ownership is the difference between a product and a side project that survives until the next reorg.",
+      "de": "Finanzierte Verantwortung ist der Unterschied zwischen einem Produkt und einem Nebenprojekt, das bis zur nächsten Reorg überlebt."
+    },
+    "options": [
+      {
+        "id": "nobody",
+        "score": 1,
+        "label": {
+          "en": "Nobody formally — enthusiasts maintain it next to their day job",
+          "de": "Formal niemand – Enthusiast:innen pflegen es neben ihrem Tagesgeschäft"
+        }
+      },
+      {
+        "id": "volunteers",
+        "score": 2,
+        "label": {
+          "en": "A named group, but without protected time",
+          "de": "Eine benannte Gruppe, aber ohne geschützte Zeit"
+        }
+      },
+      {
+        "id": "part-time",
+        "score": 3,
+        "label": {
+          "en": "A team with a formal part-time allocation",
+          "de": "Ein Team mit formal zugewiesener Teilzeit-Kapazität"
+        }
+      },
+      {
+        "id": "dedicated",
+        "score": 4,
+        "label": {
+          "en": "A dedicated, funded team with a product owner",
+          "de": "Ein eigenes, finanziertes Team mit Product Owner"
+        }
+      },
+      {
+        "id": "federated",
+        "score": 5,
+        "label": {
+          "en": "A funded core team plus formally recognised federated contributors",
+          "de": "Ein finanziertes Kernteam plus formal anerkannte föderierte Beitragende"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gov-02",
+    "categoryId": "governance",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How can a product team get a change into the design system?",
+      "de": "Wie bekommt ein Produktteam eine Änderung ins Design System?"
+    },
+    "help": {
+      "en": "Nathan Curtis' models — solitary, centralised, federated — differ mainly in how a contribution travels. Any of them works; not having one does not.",
+      "de": "Die Modelle von Nathan Curtis – solitär, zentralisiert, föderiert – unterscheiden sich vor allem im Weg eines Beitrags. Jedes funktioniert; keins zu haben nicht."
+    },
+    "options": [
+      {
+        "id": "unclear",
+        "score": 1,
+        "label": {
+          "en": "Unclear — they ask around or build their own version",
+          "de": "Unklar – sie fragen herum oder bauen eine eigene Variante"
+        }
+      },
+      {
+        "id": "request",
+        "score": 2,
+        "label": {
+          "en": "They file a request and wait for the core team",
+          "de": "Sie stellen eine Anfrage und warten auf das Kernteam"
+        }
+      },
+      {
+        "id": "documented",
+        "score": 3,
+        "label": {
+          "en": "A documented contribution process exists and is used occasionally",
+          "de": "Ein dokumentierter Beitragsprozess existiert und wird gelegentlich genutzt"
+        }
+      },
+      {
+        "id": "regular",
+        "score": 4,
+        "label": {
+          "en": "Contribution is routine, with review support from the core team",
+          "de": "Beiträge sind Routine, mit Review-Unterstützung durch das Kernteam"
+        }
+      },
+      {
+        "id": "federated",
+        "score": 5,
+        "label": {
+          "en": "A federated model with trained reviewers in the product teams",
+          "de": "Ein föderiertes Modell mit geschulten Reviewer:innen in den Produktteams"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gov-03",
+    "categoryId": "governance",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "How are incoming requests prioritised?",
+      "de": "Wie werden eingehende Anfragen priorisiert?"
+    },
+    "help": {
+      "en": "Without visible prioritisation, the loudest team sets the roadmap and everyone else stops asking.",
+      "de": "Ohne sichtbare Priorisierung setzt das lauteste Team die Roadmap – und alle anderen fragen irgendwann nicht mehr."
+    },
+    "options": [
+      {
+        "id": "loudest",
+        "score": 1,
+        "label": {
+          "en": "Whoever asks most insistently",
+          "de": "Wer am hartnäckigsten fragt"
+        }
+      },
+      {
+        "id": "backlog",
+        "score": 2,
+        "label": {
+          "en": "A backlog exists, ordering is intuitive",
+          "de": "Ein Backlog existiert, die Reihenfolge ist Bauchgefühl"
+        }
+      },
+      {
+        "id": "criteria",
+        "score": 3,
+        "label": {
+          "en": "Written intake criteria (reuse potential, number of affected teams)",
+          "de": "Schriftliche Aufnahmekriterien (Wiederverwendungspotenzial, Anzahl betroffener Teams)"
+        }
+      },
+      {
+        "id": "cadence",
+        "score": 4,
+        "label": {
+          "en": "Criteria plus a regular, visible triage cadence",
+          "de": "Kriterien plus regelmäßige, sichtbare Triage-Runde"
+        }
+      },
+      {
+        "id": "transparent",
+        "score": 5,
+        "label": {
+          "en": "Triage in public, with the decision and its reasoning fed back to the requester",
+          "de": "Öffentliche Triage, Entscheidung und Begründung gehen an die anfragende Person zurück"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gov-04",
+    "categoryId": "governance",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "Is there a definition of done that a component must meet before it is released?",
+      "de": "Gibt es eine Definition of Done, die eine Komponente vor dem Release erfüllen muss?"
+    },
+    "help": {
+      "en": "A component checklist (a11y, tests, docs, tokens, responsive behaviour) is the cheapest quality gate a system team can own.",
+      "de": "Eine Komponenten-Checkliste (A11y, Tests, Doku, Tokens, Responsive-Verhalten) ist das günstigste Qualitätstor, das ein Systemteam betreiben kann."
+    },
+    "options": [
+      {
+        "id": "none",
+        "score": 1,
+        "label": {
+          "en": "No — it ships when it looks right",
+          "de": "Nein – es geht live, wenn es richtig aussieht"
+        }
+      },
+      {
+        "id": "implicit",
+        "score": 2,
+        "label": {
+          "en": "An implicit standard the core team carries in their heads",
+          "de": "Ein impliziter Standard, den das Kernteam im Kopf hat"
+        }
+      },
+      {
+        "id": "checklist",
+        "score": 3,
+        "label": {
+          "en": "A written checklist used during review",
+          "de": "Eine schriftliche Checkliste, die im Review genutzt wird"
+        }
+      },
+      {
+        "id": "automated",
+        "score": 4,
+        "label": {
+          "en": "Checklist with the mechanical parts automated in CI",
+          "de": "Checkliste, deren mechanische Teile in der CI automatisiert sind"
+        }
+      },
+      {
+        "id": "gated",
+        "score": 5,
+        "label": {
+          "en": "Automated gates block the release, with a documented exception path",
+          "de": "Automatisierte Gates blockieren das Release, mit dokumentiertem Ausnahmeweg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gov-05",
+    "categoryId": "governance",
+    "weight": 2,
+    "allowNote": true,
+    "prompt": {
+      "en": "Are significant decisions recorded somewhere others can read later?",
+      "de": "Werden wesentliche Entscheidungen so festgehalten, dass andere sie später nachlesen können?"
+    },
+    "help": {
+      "en": "Undocumented decisions get relitigated every six months, usually by new people with the same good arguments.",
+      "de": "Undokumentierte Entscheidungen werden alle sechs Monate neu verhandelt – meist von neuen Leuten mit denselben guten Argumenten."
+    },
+    "options": [
+      {
+        "id": "no",
+        "score": 1,
+        "label": {
+          "en": "No, decisions live in meetings and chat",
+          "de": "Nein, Entscheidungen leben in Meetings und im Chat"
+        }
+      },
+      {
+        "id": "notes",
+        "score": 2,
+        "label": {
+          "en": "Meeting notes that are hard to search",
+          "de": "Meeting-Notizen, die schwer durchsuchbar sind"
+        }
+      },
+      {
+        "id": "adr",
+        "score": 3,
+        "label": {
+          "en": "Decision records for the bigger calls",
+          "de": "Entscheidungs-Records für die größeren Fragen"
+        }
+      },
+      {
+        "id": "adr-linked",
+        "score": 4,
+        "label": {
+          "en": "Decision records linked from the affected components and docs",
+          "de": "Entscheidungs-Records, verlinkt aus den betroffenen Komponenten und Docs"
+        }
+      },
+      {
+        "id": "public-roadmap",
+        "score": 5,
+        "label": {
+          "en": "Decision records plus a publicly visible roadmap consumers can comment on",
+          "de": "Entscheidungs-Records plus öffentlich sichtbare Roadmap, die kommentiert werden kann"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gov-06",
+    "categoryId": "governance",
+    "weight": 3,
+    "allowNote": true,
+    "prompt": {
+      "en": "How is accessibility governed — who signs a component off as accessible?",
+      "de": "Wie wird Accessibility gesteuert – wer gibt eine Komponente als barrierefrei frei?"
+    },
+    "help": {
+      "en": "A design system multiplies whatever it contains. An inaccessible component becomes an organisation-wide defect.",
+      "de": "Ein Design System multipliziert alles, was es enthält. Eine nicht barrierefreie Komponente wird zum organisationsweiten Defekt."
+    },
+    "options": [
+      {
+        "id": "nobody",
+        "score": 1,
+        "label": {
+          "en": "Nobody — it is handled per product, if at all",
+          "de": "Niemand – das wird pro Produkt geklärt, wenn überhaupt"
+        }
+      },
+      {
+        "id": "goodwill",
+        "score": 2,
+        "label": {
+          "en": "Individual goodwill inside the team",
+          "de": "Individuelles Engagement innerhalb des Teams"
+        }
+      },
+      {
+        "id": "linting",
+        "score": 3,
+        "label": {
+          "en": "Automated checks (linting, axe) run in CI",
+          "de": "Automatisierte Prüfungen (Linting, axe) laufen in der CI"
+        }
+      },
+      {
+        "id": "manual-review",
+        "score": 4,
+        "label": {
+          "en": "Automated checks plus manual keyboard and screen-reader review before release",
+          "de": "Automatisierte Prüfungen plus manuelles Tastatur- und Screenreader-Review vor dem Release"
+        }
+      },
+      {
+        "id": "audited",
+        "score": 5,
+        "label": {
+          "en": "Reviewed in-house and independently audited on a fixed cadence",
+          "de": "Intern geprüft und in festem Rhythmus unabhängig auditiert"
+        }
+      }
+    ]
+  }
+]

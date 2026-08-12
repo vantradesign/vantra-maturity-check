@@ -1,0 +1,192 @@
+{
+  "1": [
+    {
+      "id": "ado-l1-baseline",
+      "effort": "M",
+      "title": {
+        "en": "Measure a baseline, however rough",
+        "de": "Erhebt eine Ausgangsbasis, so grob sie auch ist"
+      },
+      "detail": {
+        "en": "Count design-system imports against total component imports in one product. A rough number you can repeat beats a precise one you cannot.",
+        "de": "Zählt Design-System-Importe gegen alle Komponenten-Importe in einem Produkt. Eine grobe, wiederholbare Zahl schlägt eine präzise, einmalige."
+      }
+    },
+    {
+      "id": "ado-l1-pilot",
+      "effort": "M",
+      "title": {
+        "en": "Pick one pilot team and make them successful",
+        "de": "Wählt ein Pilotteam und macht es erfolgreich"
+      },
+      "detail": {
+        "en": "One visibly successful adoption is more persuasive than any mandate, and it produces the friction list you need next.",
+        "de": "Eine sichtbar erfolgreiche Einführung überzeugt mehr als jedes Mandat – und liefert die Reibungsliste, die ihr als Nächstes braucht."
+      }
+    },
+    {
+      "id": "ado-l1-channel",
+      "effort": "S",
+      "title": {
+        "en": "Open one support channel and answer in it",
+        "de": "Öffnet einen Support-Kanal und antwortet darin"
+      },
+      "detail": {
+        "en": "Public answers compound: the next team finds the reply instead of asking again in a private message.",
+        "de": "Öffentliche Antworten verzinsen sich: Das nächste Team findet die Antwort, statt erneut privat zu fragen."
+      }
+    }
+  ],
+  "2": [
+    {
+      "id": "ado-l2-onboarding",
+      "effort": "S",
+      "title": {
+        "en": "Run a structured onboarding session for each new team",
+        "de": "Führt für jedes neue Team eine strukturierte Onboarding-Session durch"
+      },
+      "detail": {
+        "en": "Sixty minutes, the same agenda every time. Every question asked twice becomes a documentation task.",
+        "de": "Sechzig Minuten, jedes Mal dieselbe Agenda. Jede zweimal gestellte Frage wird zur Doku-Aufgabe."
+      }
+    },
+    {
+      "id": "ado-l2-friction-log",
+      "effort": "S",
+      "title": {
+        "en": "Keep a friction log and fix the top item each sprint",
+        "de": "Führt ein Reibungs-Log und behebt jeden Sprint den obersten Punkt"
+      },
+      "detail": {
+        "en": "Adoption is usually blocked by three concrete annoyances, not by attitude. Write them down and remove them in order.",
+        "de": "Adoption scheitert meist an drei konkreten Ärgernissen, nicht an Haltung. Schreibt sie auf und beseitigt sie der Reihe nach."
+      }
+    },
+    {
+      "id": "ado-l2-recurring-scan",
+      "effort": "M",
+      "title": {
+        "en": "Turn the baseline count into a recurring scan",
+        "de": "Macht aus der Ausgangszählung einen wiederkehrenden Scan"
+      },
+      "detail": {
+        "en": "A monthly script and a single chart is enough. The trend line is what convinces stakeholders, not the absolute value.",
+        "de": "Ein monatliches Skript und ein einziges Diagramm genügen. Die Trendlinie überzeugt Stakeholder, nicht der Absolutwert."
+      }
+    }
+  ],
+  "3": [
+    {
+      "id": "ado-l3-usage-analytics",
+      "effort": "M",
+      "title": {
+        "en": "Automate component usage analytics per product",
+        "de": "Automatisiert die Komponenten-Nutzungsanalyse pro Produkt"
+      },
+      "detail": {
+        "en": "Static analysis of consuming repositories tells you which components matter, which are ignored, and which are being worked around.",
+        "de": "Statische Analyse der konsumierenden Repositories zeigt, welche Komponenten zählen, welche ignoriert und welche umgangen werden."
+      }
+    },
+    {
+      "id": "ado-l3-office-hours",
+      "effort": "S",
+      "title": {
+        "en": "Hold recurring office hours",
+        "de": "Bietet wiederkehrende Sprechstunden an"
+      },
+      "detail": {
+        "en": "A standing slot lowers the cost of asking, which is what surfaces the problems nobody bothers to file an issue for.",
+        "de": "Ein fester Slot senkt die Kosten des Fragens – und genau das bringt die Probleme hervor, für die niemand ein Issue anlegt."
+      }
+    },
+    {
+      "id": "ado-l3-override-visibility",
+      "effort": "M",
+      "title": {
+        "en": "Make overrides and detached components visible",
+        "de": "Macht Overrides und abgelöste Komponenten sichtbar"
+      },
+      "detail": {
+        "en": "Treat each override as a filed feature request. It is the highest-signal, lowest-effort feedback channel you have.",
+        "de": "Behandelt jeden Override als eingereichten Feature-Wunsch. Es ist der signalstärkste und günstigste Feedback-Kanal, den ihr habt."
+      }
+    }
+  ],
+  "4": [
+    {
+      "id": "ado-l4-dashboard",
+      "effort": "M",
+      "title": {
+        "en": "Put adoption on a dashboard leadership actually reads",
+        "de": "Bringt Adoption auf ein Dashboard, das die Leitung wirklich liest"
+      },
+      "detail": {
+        "en": "Coverage, override rate and version spread per product. Three numbers, updated automatically, reviewed quarterly.",
+        "de": "Abdeckung, Override-Rate und Versionsstreuung pro Produkt. Drei Zahlen, automatisch aktualisiert, quartalsweise besprochen."
+      }
+    },
+    {
+      "id": "ado-l4-champions",
+      "effort": "L",
+      "title": {
+        "en": "Embed champions in the product teams",
+        "de": "Verankert Champions in den Produktteams"
+      },
+      "detail": {
+        "en": "A named person per product who reviews design-system usage locally scales enablement without growing the core team.",
+        "de": "Eine benannte Person pro Produkt, die die Nutzung lokal reviewt, skaliert Enablement, ohne das Kernteam zu vergrößern."
+      }
+    },
+    {
+      "id": "ado-l4-response-target",
+      "effort": "S",
+      "title": {
+        "en": "Publish a response expectation and measure against it",
+        "de": "Veröffentlicht eine Reaktionszusage und messt euch daran"
+      },
+      "detail": {
+        "en": "\"First response within one working day\" is a product promise. Meeting it is what earns the system its dependency status.",
+        "de": "„Erste Antwort innerhalb eines Arbeitstages“ ist ein Produktversprechen. Es einzuhalten macht das System zur belastbaren Abhängigkeit."
+      }
+    }
+  ],
+  "5": [
+    {
+      "id": "ado-l5-objectives",
+      "effort": "M",
+      "title": {
+        "en": "Tie adoption goals into team objectives",
+        "de": "Verankert Adoptionsziele in den Teamzielen"
+      },
+      "detail": {
+        "en": "Shared targets end the situation where using the system is a favour a product team does for the system team.",
+        "de": "Gemeinsame Ziele beenden die Lage, in der die Nutzung des Systems ein Gefallen des Produktteams an das Systemteam ist."
+      }
+    },
+    {
+      "id": "ado-l5-value",
+      "effort": "M",
+      "title": {
+        "en": "Report the value, not just the usage",
+        "de": "Berichtet den Wert, nicht nur die Nutzung"
+      },
+      "detail": {
+        "en": "Time saved per screen, defects avoided, accessibility issues prevented at source. This is what protects the budget in the next planning round.",
+        "de": "Gesparte Zeit pro Screen, vermiedene Defekte, an der Quelle verhinderte Accessibility-Probleme. Das schützt das Budget in der nächsten Planungsrunde."
+      }
+    },
+    {
+      "id": "ado-l5-retire",
+      "effort": "L",
+      "title": {
+        "en": "Retire the legacy alternatives on a schedule",
+        "de": "Stellt die Altlösungen nach Plan ein"
+      },
+      "detail": {
+        "en": "The last ten percent of adoption is blocked by an old library nobody has dared to switch off. Give it an end date.",
+        "de": "Die letzten zehn Prozent Adoption blockiert eine alte Library, die niemand abzuschalten wagt. Gebt ihr ein Enddatum."
+      }
+    }
+  ]
+}

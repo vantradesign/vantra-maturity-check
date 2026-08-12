@@ -1,0 +1,192 @@
+{
+  "1": [
+    {
+      "id": "gov-l1-name-owner",
+      "effort": "S",
+      "title": {
+        "en": "Name one accountable owner, in writing",
+        "de": "Benennt eine verantwortliche Person – schriftlich"
+      },
+      "detail": {
+        "en": "Not a committee. One name that people can address, with a stated fallback when that person is away.",
+        "de": "Kein Gremium. Ein Name, an den man sich wenden kann, plus benannte Vertretung bei Abwesenheit."
+      }
+    },
+    {
+      "id": "gov-l1-protected-time",
+      "effort": "M",
+      "title": {
+        "en": "Negotiate protected time, however small",
+        "de": "Verhandelt geschützte Zeit, und sei sie klein"
+      },
+      "detail": {
+        "en": "One reliable day a week beats five unreliable ones. Predictability is what allows a contribution process to exist at all.",
+        "de": "Ein verlässlicher Tag pro Woche schlägt fünf unzuverlässige. Verlässlichkeit ist die Voraussetzung dafür, dass ein Beitragsprozess überhaupt existieren kann."
+      }
+    },
+    {
+      "id": "gov-l1-intake",
+      "effort": "S",
+      "title": {
+        "en": "Create one visible place for requests",
+        "de": "Schafft einen sichtbaren Ort für Anfragen"
+      },
+      "detail": {
+        "en": "An issue template with three fields — what, who else needs it, when. Requests in direct messages cannot be prioritised or counted.",
+        "de": "Ein Issue-Template mit drei Feldern – was, wer braucht es noch, bis wann. Anfragen per Direktnachricht lassen sich weder priorisieren noch zählen."
+      }
+    }
+  ],
+  "2": [
+    {
+      "id": "gov-l2-contribution-doc",
+      "effort": "S",
+      "title": {
+        "en": "Document how a change gets in",
+        "de": "Dokumentiert, wie eine Änderung hineinkommt"
+      },
+      "detail": {
+        "en": "Propose, agree, build, review, release — with who decides at each step. One page is enough, and it doubles as onboarding.",
+        "de": "Vorschlagen, abstimmen, bauen, reviewen, releasen – mit der Entscheidungsinstanz je Schritt. Eine Seite genügt und dient zugleich als Onboarding."
+      }
+    },
+    {
+      "id": "gov-l2-dod-checklist",
+      "effort": "S",
+      "title": {
+        "en": "Write the component definition of done",
+        "de": "Schreibt die Definition of Done für Komponenten auf"
+      },
+      "detail": {
+        "en": "Accessibility, tests, documentation, tokens, responsive behaviour, changelog entry. Six checkboxes, applied to every component without exception.",
+        "de": "Accessibility, Tests, Doku, Tokens, Responsive-Verhalten, Changelog-Eintrag. Sechs Haken, ausnahmslos für jede Komponente."
+      }
+    },
+    {
+      "id": "gov-l2-intake-criteria",
+      "effort": "S",
+      "title": {
+        "en": "Publish the criteria you use to accept a request",
+        "de": "Veröffentlicht die Kriterien, nach denen ihr Anfragen annehmt"
+      },
+      "detail": {
+        "en": "\"Needed by at least two teams\" is a defensible rule. An unpublished rule is indistinguishable from favouritism.",
+        "de": "„Von mindestens zwei Teams gebraucht“ ist eine vertretbare Regel. Eine unveröffentlichte Regel ist von Willkür nicht zu unterscheiden."
+      }
+    }
+  ],
+  "3": [
+    {
+      "id": "gov-l3-triage-cadence",
+      "effort": "S",
+      "title": {
+        "en": "Run a visible triage on a fixed cadence",
+        "de": "Führt eine sichtbare Triage in festem Rhythmus durch"
+      },
+      "detail": {
+        "en": "Thirty minutes a week, decisions written into the issue. Requesters stop chasing you when they know the answer has a date.",
+        "de": "Dreißig Minuten pro Woche, Entscheidungen ins Issue geschrieben. Anfragende hören auf nachzuhaken, wenn sie wissen, wann die Antwort kommt."
+      }
+    },
+    {
+      "id": "gov-l3-adr",
+      "effort": "S",
+      "title": {
+        "en": "Record significant decisions where the code lives",
+        "de": "Haltet wesentliche Entscheidungen dort fest, wo der Code liegt"
+      },
+      "detail": {
+        "en": "Context, options, decision, consequences. Half a page per decision prevents the same debate from restarting every six months.",
+        "de": "Kontext, Optionen, Entscheidung, Konsequenzen. Eine halbe Seite pro Entscheidung verhindert, dass dieselbe Debatte halbjährlich neu beginnt."
+      }
+    },
+    {
+      "id": "gov-l3-a11y-ci",
+      "effort": "M",
+      "title": {
+        "en": "Automate the accessibility checks that can be automated",
+        "de": "Automatisiert die Accessibility-Prüfungen, die sich automatisieren lassen"
+      },
+      "detail": {
+        "en": "Automated tooling catches roughly a third of issues, but it catches them every time and for free. Keep the manual review for the rest.",
+        "de": "Automatisierte Werkzeuge finden etwa ein Drittel der Probleme – aber jedes Mal und kostenlos. Für den Rest bleibt das manuelle Review."
+      }
+    }
+  ],
+  "4": [
+    {
+      "id": "gov-l4-federated",
+      "effort": "L",
+      "title": {
+        "en": "Train reviewers inside the product teams",
+        "de": "Bildet Reviewer:innen in den Produktteams aus"
+      },
+      "detail": {
+        "en": "A federated model scales the review capacity that is otherwise the core team's permanent bottleneck.",
+        "de": "Ein föderiertes Modell skaliert die Review-Kapazität, die sonst der dauerhafte Engpass des Kernteams bleibt."
+      }
+    },
+    {
+      "id": "gov-l4-manual-a11y",
+      "effort": "M",
+      "title": {
+        "en": "Add keyboard and screen-reader review before every release",
+        "de": "Ergänzt Tastatur- und Screenreader-Review vor jedem Release"
+      },
+      "detail": {
+        "en": "A scripted twenty-minute pass per component, with the result recorded in the documentation, closes the gap automation leaves.",
+        "de": "Ein skriptierter Zwanzig-Minuten-Durchgang pro Komponente, dokumentiert im Ergebnis, schließt die Lücke, die Automatisierung lässt."
+      }
+    },
+    {
+      "id": "gov-l4-public-roadmap",
+      "effort": "S",
+      "title": {
+        "en": "Make the roadmap visible to your consumers",
+        "de": "Macht die Roadmap für eure Teams sichtbar"
+      },
+      "detail": {
+        "en": "Teams that can see what is coming stop building their own version of it — which is cheaper than any migration you would have to fund later.",
+        "de": "Teams, die sehen, was kommt, bauen es nicht selbst nach – das ist günstiger als jede Migration, die ihr sonst später finanzieren müsst."
+      }
+    }
+  ],
+  "5": [
+    {
+      "id": "gov-l5-external-audit",
+      "effort": "L",
+      "title": {
+        "en": "Commission an independent accessibility audit on a cadence",
+        "de": "Beauftragt in festem Rhythmus ein unabhängiges Accessibility-Audit"
+      },
+      "detail": {
+        "en": "External findings carry organisational weight that internal ones rarely do, and they calibrate your own review.",
+        "de": "Externe Befunde haben ein organisationales Gewicht, das interne selten erreichen – und sie kalibrieren euer eigenes Review."
+      }
+    },
+    {
+      "id": "gov-l5-review-model",
+      "effort": "M",
+      "title": {
+        "en": "Review the governance model itself once a year",
+        "de": "Überprüft das Governance-Modell selbst einmal jährlich"
+      },
+      "detail": {
+        "en": "The model that fits four teams throttles twelve. Treat the process as a component with its own version history.",
+        "de": "Das Modell, das für vier Teams passt, bremst zwölf. Behandelt den Prozess als Komponente mit eigener Versionshistorie."
+      }
+    },
+    {
+      "id": "gov-l5-open",
+      "effort": "M",
+      "title": {
+        "en": "Publish your governance model outside the company",
+        "de": "Veröffentlicht euer Governance-Modell außerhalb des Unternehmens"
+      },
+      "detail": {
+        "en": "Writing it for strangers exposes the parts that only work because everyone involved already knows each other.",
+        "de": "Es für Fremde aufzuschreiben legt die Teile offen, die nur funktionieren, weil sich alle Beteiligten ohnehin kennen."
+      }
+    }
+  ]
+}
