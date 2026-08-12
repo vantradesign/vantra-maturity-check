@@ -2,7 +2,14 @@ import { findCategory, findQuestion } from './catalog.js'
 import { t, ui } from './i18n.js'
 import { recommendationsFor } from './next-steps.js'
 import { findLevel } from './scoring.js'
-import type { AnswerSet, AssessmentResult, Catalog, Locale, NextStep } from './types.js'
+import type {
+  AnswerSet,
+  AssessmentContext,
+  AssessmentResult,
+  Catalog,
+  Locale,
+  NextStep,
+} from './types.js'
 
 /**
  * Report rendering lives in `core` so the CLI export and the web download are
@@ -132,6 +139,12 @@ export interface JsonExport {
   locale: Locale
   result: AssessmentResult
   answers: AnswerSet
+  /**
+   * Coarse team context, when the user provided it. Stored so a later run can
+   * pre-fill it, and so an export can be turned into a benchmark submission
+   * without asking the same questions again.
+   */
+  context?: AssessmentContext
 }
 
 /**
@@ -144,12 +157,15 @@ export function toJsonExport(
   answers: AnswerSet,
   locale: Locale,
   toolVersion: string,
+  context?: AssessmentContext,
 ): JsonExport {
-  return {
+  const exported: JsonExport = {
     tool: 'vantra-maturity-check',
     toolVersion,
     locale,
     result,
     answers,
   }
+  if (context) exported.context = context
+  return exported
 }

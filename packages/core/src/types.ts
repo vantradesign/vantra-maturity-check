@@ -121,6 +121,45 @@ export interface AssessmentResult {
   categories: CategoryResult[]
 }
 
+/**
+ * Coarse context about the team being assessed.
+ *
+ * [Product] A score means little on its own: three people supporting forty
+ * products is a different situation from eight supporting four. These bands
+ * exist so a result can later be compared against similar teams.
+ *
+ * [Privacy] Every field is optional, every value is a fixed band, and there is
+ * deliberately no free-text field, no company name and no sector. Bands are
+ * wide enough that a combination of all three does not single anybody out.
+ * Anything narrower would be a re-identification risk dressed up as insight.
+ */
+export type TeamSizeBand = 'none' | '1-2' | '3-5' | '6-10' | '11+'
+
+export type ConsumerCountBand = '1-2' | '3-5' | '6-10' | '11-25' | '26+'
+
+export type SystemAgeBand = 'under-1' | '1-2' | '3-5' | 'over-5'
+
+export const TEAM_SIZE_BANDS: readonly TeamSizeBand[] = ['none', '1-2', '3-5', '6-10', '11+']
+
+export const CONSUMER_COUNT_BANDS: readonly ConsumerCountBand[] = [
+  '1-2',
+  '3-5',
+  '6-10',
+  '11-25',
+  '26+',
+]
+
+export const SYSTEM_AGE_BANDS: readonly SystemAgeBand[] = ['under-1', '1-2', '3-5', 'over-5']
+
+export interface AssessmentContext {
+  /** People working on the design system itself, in full-time equivalents. */
+  teamSize?: TeamSizeBand
+  /** Product teams or squads consuming the system. */
+  consumers?: ConsumerCountBand
+  /** Years since the system started, however informally. */
+  systemAge?: SystemAgeBand
+}
+
 export interface ValidationIssue {
   path: string
   message: string
