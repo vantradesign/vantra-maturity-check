@@ -51,9 +51,28 @@
           "minItems": 4,
           "maxItems": 5,
           "items": { "$ref": "#/$defs/answerOption" }
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Published models this criterion derives from. Each `ref` must match an id in the catalog's `sources`.",
+          "items": { "$ref": "#/$defs/questionSource" }
         }
       },
       "required": ["id", "categoryId", "weight", "prompt", "help", "allowNote", "options"],
+      "additionalProperties": false
+    },
+    "questionSource": {
+      "type": "object",
+      "properties": {
+        "ref": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "criterion": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Which criterion of that model this question draws on. Not translated: it is a citation, not UI copy."
+        }
+      },
+      "required": ["ref"],
       "additionalProperties": false
     }
   }

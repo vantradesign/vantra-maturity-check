@@ -52,4 +52,5 @@ export const designSystemCatalog: Catalog = {
   levels: meta.levels,
   categories,
   nextSteps,
+  sources: meta.sources,
 } as unknown as Catalog

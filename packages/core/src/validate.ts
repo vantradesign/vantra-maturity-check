@@ -60,6 +60,34 @@ export function validateCatalog(input: unknown): ValidationIssue[] {
   checkLocalized(input.name, 'name', locales, issues)
   checkLocalized(input.description, 'description', locales, issues)
 
+  // Sources -------------------------------------------------------------------
+  // Optional, but a citation that points nowhere is worse than no citation:
+  // it looks like provenance while proving nothing.
+  const sourceIds = new Set<string>()
+  if (input.sources !== undefined) {
+    if (!Array.isArray(input.sources)) {
+      issues.push({ path: 'sources', message: 'must be an array of sources' })
+    } else {
+      input.sources.forEach((source, index) => {
+        const path = `sources[${index}]`
+        if (!isRecord(source)) {
+          issues.push({ path, message: 'must be an object' })
+          return
+        }
+        for (const key of ['id', 'name', 'publisher'] as const) {
+          if (typeof source[key] !== 'string' || (source[key] as string).trim() === '') {
+            issues.push({ path: `${path}.${key}`, message: 'must be a non-empty string' })
+          }
+        }
+        const id = typeof source.id === 'string' ? source.id : ''
+        if (id !== '' && sourceIds.has(id)) {
+          issues.push({ path: `${path}.id`, message: `duplicate source id "${id}"` })
+        }
+        sourceIds.add(id)
+      })
+    }
+  }
+
   // Levels ------------------------------------------------------------------
   const levels = Array.isArray(input.levels) ? input.levels : []
   if (levels.length !== 5) {
@@ -136,6 +164,26 @@ export function validateCatalog(input: unknown): ValidationIssue[] {
       }
       checkLocalized(question.prompt, `${qPath}.prompt`, locales, issues)
       checkLocalized(question.help, `${qPath}.help`, locales, issues)
+
+      if (question.sources !== undefined) {
+        if (!Array.isArray(question.sources)) {
+          issues.push({ path: `${qPath}.sources`, message: 'must be an array' })
+        } else {
+          question.sources.forEach((source, sourceIndex) => {
+            const sPath = `${qPath}.sources[${sourceIndex}]`
+            if (!isRecord(source) || typeof source.ref !== 'string') {
+              issues.push({ path: sPath, message: 'must be an object with a `ref`' })
+              return
+            }
+            if (!sourceIds.has(source.ref)) {
+              issues.push({
+                path: `${sPath}.ref`,
+                message: `unknown source "${source.ref}" — declare it in catalog.sources`,
+              })
+            }
+          })
+        }
+      }
 
       const options = Array.isArray(question.options) ? question.options : []
       if (options.length < 4 || options.length > 5) {

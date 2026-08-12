@@ -77,6 +77,9 @@ pnpm run cli        # run the built CLI
 
 - [CLI usage](packages/cli/README.md)
 - [Engine API](packages/core/README.md)
+- [Scoring rules](SCORING.md)
+- [Methodology, sources and limitations](docs/METHODOLOGY.md) — where the questions come from, and what the score cannot tell you
+- [Decisions](docs/DECISIONS.md) — why there is no backend, and what the benchmark contract commits to
 - [Contributing and catalog authoring](CONTRIBUTING.md)
 
 ## License

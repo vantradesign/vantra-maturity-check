@@ -16,22 +16,34 @@
       {
         "id": "under25",
         "score": 1,
-        "label": { "en": "Less than 25%", "de": "Weniger als 25 %" }
+        "label": {
+          "en": "Less than 25%",
+          "de": "Weniger als 25 %"
+        }
       },
       {
         "id": "under50",
         "score": 2,
-        "label": { "en": "Roughly 25–50%", "de": "Etwa 25–50 %" }
+        "label": {
+          "en": "Roughly 25–50%",
+          "de": "Etwa 25–50 %"
+        }
       },
       {
         "id": "under75",
         "score": 3,
-        "label": { "en": "Roughly 50–75%", "de": "Etwa 50–75 %" }
+        "label": {
+          "en": "Roughly 50–75%",
+          "de": "Etwa 50–75 %"
+        }
       },
       {
         "id": "under90",
         "score": 4,
-        "label": { "en": "Roughly 75–90%", "de": "Etwa 75–90 %" }
+        "label": {
+          "en": "Roughly 75–90%",
+          "de": "Etwa 75–90 %"
+        }
       },
       {
         "id": "over90",
@@ -40,6 +52,16 @@
           "en": "More than 90%, with documented exceptions",
           "de": "Mehr als 90 %, mit dokumentierten Ausnahmen"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Adoption coverage"
+      },
+      {
+        "ref": "invision",
+        "criterion": "Design maturity indicators"
       }
     ]
   },
@@ -60,7 +82,10 @@
       {
         "id": "guess",
         "score": 1,
-        "label": { "en": "We are guessing", "de": "Wir schätzen" }
+        "label": {
+          "en": "We are guessing",
+          "de": "Wir schätzen"
+        }
       },
       {
         "id": "manual",
@@ -94,6 +119,16 @@
           "de": "Ein Live-Dashboard, auf das Leitung und Produktteams gleichermaßen schauen"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Adoption measurement"
+      },
+      {
+        "ref": "curtis",
+        "criterion": "Measuring adoption"
+      }
     ]
   },
   {
@@ -113,7 +148,10 @@
       {
         "id": "none",
         "score": 1,
-        "label": { "en": "None", "de": "Keine" }
+        "label": {
+          "en": "None",
+          "de": "Keine"
+        }
       },
       {
         "id": "ondemand",
@@ -146,6 +184,16 @@
           "en": "A running enablement programme with champions embedded in the product teams",
           "de": "Ein laufendes Enablement-Programm mit Champions in den Produktteams"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Enablement and support"
+      },
+      {
+        "ref": "invision",
+        "criterion": "Enablement practices"
       }
     ]
   },
@@ -203,6 +251,16 @@
           "de": "Reaktions- und Lösungszeiten werden gemessen und ausgewertet"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Support channels"
+      },
+      {
+        "ref": "rangle",
+        "criterion": "Support model"
+      }
     ]
   },
   {
@@ -259,6 +317,16 @@
           "de": "Gemessen und als Feature-Wünsche zurück in die Roadmap gespielt"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Overrides and forking"
+      },
+      {
+        "ref": "rangle",
+        "criterion": "Deviation handling"
+      }
     ]
   },
   {
@@ -314,6 +382,16 @@
           "en": "A tracked strategic asset with adoption goals in team objectives",
           "de": "Ein verfolgtes strategisches Asset mit Adoptionszielen in den Teamzielen"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "invision",
+        "criterion": "Leadership and design maturity"
+      },
+      {
+        "ref": "cmmi",
+        "criterion": "Institutionalisation"
       }
     ]
   }

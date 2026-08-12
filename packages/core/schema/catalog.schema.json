@@ -19,6 +19,11 @@
       "minItems": 1,
       "items": { "enum": ["en", "de"] }
     },
+    "sources": {
+      "type": "array",
+      "description": "Bibliography. Questions cite these by id, so a reader can check where a criterion came from.",
+      "items": { "$ref": "#/$defs/source" }
+    },
     "levels": {
       "type": "array",
       "minItems": 5,
@@ -68,6 +73,17 @@
       },
       "required": ["en", "de"],
       "additionalProperties": { "type": "string" }
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "publisher": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" }
+      },
+      "required": ["id", "name", "publisher"],
+      "additionalProperties": false
     },
     "level": {
       "type": "object",

@@ -9,8 +9,8 @@
       "de": "Wem gehört das Design System, und wie ist diese Verantwortung finanziert?"
     },
     "help": {
-      "en": "Funded ownership is the difference between a product and a side project that survives until the next reorg.",
-      "de": "Finanzierte Verantwortung ist der Unterschied zwischen einem Produkt und einem Nebenprojekt, das bis zur nächsten Reorg überlebt."
+      "en": "Funded ownership is the difference between a product and a side project that survives until the next reorg. In a small organisation the top options may simply not apply — answer for the arrangement you have, not the one an org chart would allow.",
+      "de": "Finanzierte Verantwortung ist der Unterschied zwischen einem Produkt und einem Nebenprojekt, das bis zur nächsten Reorganisation überlebt. In kleinen Organisationen sind die oberen Optionen unter Umständen gar nicht erreichbar — antwortet für die Situation, die ihr habt, nicht für die, die ein Organigramm zuließe."
     },
     "options": [
       {
@@ -52,6 +52,16 @@
           "en": "A funded core team plus formally recognised federated contributors",
           "de": "Ein finanziertes Kernteam plus formal anerkannte föderierte Beitragende"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Team models and funding"
+      },
+      {
+        "ref": "invision",
+        "criterion": "Organisational investment"
       }
     ]
   },
@@ -109,6 +119,12 @@
           "de": "Ein föderiertes Modell mit geschulten Reviewer:innen in den Produktteams"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Contribution models"
+      }
     ]
   },
   {
@@ -164,6 +180,16 @@
           "en": "Triage in public, with the decision and its reasoning fed back to the requester",
           "de": "Öffentliche Triage, Entscheidung und Begründung gehen an die anfragende Person zurück"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Intake and roadmap"
+      },
+      {
+        "ref": "rangle",
+        "criterion": "Prioritisation"
       }
     ]
   },
@@ -221,6 +247,16 @@
           "de": "Automatisierte Gates blockieren das Release, mit dokumentiertem Ausnahmeweg"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Definition of done"
+      },
+      {
+        "ref": "cmmi",
+        "criterion": "Defined process"
+      }
     ]
   },
   {
@@ -277,6 +313,12 @@
           "de": "Entscheidungs-Records plus öffentlich sichtbare Roadmap, die kommentiert werden kann"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "cmmi",
+        "criterion": "Decision records and institutional memory"
+      }
     ]
   },
   {
@@ -332,6 +374,16 @@
           "en": "Reviewed in-house and independently audited on a fixed cadence",
           "de": "Intern geprüft und in festem Rhythmus unabhängig auditiert"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "wcag",
+        "criterion": "Conformance responsibility"
+      },
+      {
+        "ref": "curtis",
+        "criterion": "Accessibility sign-off"
       }
     ]
   }

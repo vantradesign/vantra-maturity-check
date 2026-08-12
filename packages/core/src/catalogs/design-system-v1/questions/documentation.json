@@ -53,6 +53,12 @@
           "de": "Alle Komponenten, und die CI bricht das Release ab, wenn Doku fehlt"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Documentation coverage"
+      }
     ]
   },
   {
@@ -72,7 +78,10 @@
       {
         "id": "no",
         "score": 1,
-        "label": { "en": "No, code API only", "de": "Nein, nur die Code-API" }
+        "label": {
+          "en": "No, code API only",
+          "de": "Nein, nur die Code-API"
+        }
       },
       {
         "id": "scattered",
@@ -106,6 +115,16 @@
           "de": "Durchgängig, plus Beispiele echter Produktnutzung und Anti-Patterns"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Usage guidance beyond the API"
+      },
+      {
+        "ref": "curtis",
+        "criterion": "What documentation must answer"
+      }
     ]
   },
   {
@@ -125,7 +144,10 @@
       {
         "id": "no",
         "score": 1,
-        "label": { "en": "Not documented", "de": "Nicht dokumentiert" }
+        "label": {
+          "en": "Not documented",
+          "de": "Nicht dokumentiert"
+        }
       },
       {
         "id": "adhoc",
@@ -158,6 +180,16 @@
           "en": "Complete and backed by automated a11y tests referenced in the docs",
           "de": "Vollständig und durch automatisierte A11y-Tests belegt, die in der Doku verlinkt sind"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "wcag",
+        "criterion": "Documented keyboard and role behaviour"
+      },
+      {
+        "ref": "sparkbox",
+        "criterion": "Accessibility documentation"
       }
     ]
   },
@@ -215,6 +247,12 @@
           "de": "Gehostet, editierbar und pro veröffentlichter Version verfügbar"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Live examples and demos"
+      }
     ]
   },
   {
@@ -271,6 +309,16 @@
           "de": "Eine Anleitung plus lauffähiges Starter-Template oder Scaffolding-Befehl"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "sparkbox",
+        "criterion": "Onboarding path"
+      },
+      {
+        "ref": "curtis",
+        "criterion": "Getting started for new teams"
+      }
     ]
   },
   {
@@ -326,6 +374,16 @@
           "en": "Generated and enforced: broken links, missing sections and outdated examples fail CI",
           "de": "Generiert und erzwungen: tote Links, fehlende Abschnitte und veraltete Beispiele lassen die CI fehlschlagen"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "cmmi",
+        "criterion": "Defined, maintained process"
+      },
+      {
+        "ref": "sparkbox",
+        "criterion": "Documentation upkeep"
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "design-system",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Design System",
     "de": "Design System"
@@ -11,12 +11,59 @@
     "de": "Eine Selbsteinschätzung mit 24 Fragen zu Dokumentation, Versionierung, Governance und Adoption. Abgeleitet aus wiederkehrenden Kriterien der Reifegradmodelle von Sparkbox und Rangle, den Governance-Artikeln von Nathan Curtis, dem InVision Design Maturity Model und der CMMI-Levellogik."
   },
   "locales": ["en", "de"],
+  "sources": [
+    {
+      "id": "sparkbox",
+      "name": "Design System Maturity Model",
+      "publisher": "Sparkbox",
+      "url": "https://sparkbox.com/foundry"
+    },
+    {
+      "id": "rangle",
+      "name": "Design System Maturity Model",
+      "publisher": "Rangle.io",
+      "url": "https://rangle.io"
+    },
+    {
+      "id": "curtis",
+      "name": "Design system governance, contribution and adoption writing",
+      "publisher": "Nathan Curtis, EightShapes",
+      "url": "https://medium.com/@nathanacurtis"
+    },
+    {
+      "id": "invision",
+      "name": "Design Maturity Model",
+      "publisher": "InVision, DesignBetter",
+      "url": "https://www.designbetter.co"
+    },
+    {
+      "id": "cmmi",
+      "name": "Capability Maturity Model Integration",
+      "publisher": "ISACA, CMMI Institute",
+      "url": "https://cmmiinstitute.com"
+    },
+    {
+      "id": "semver",
+      "name": "Semantic Versioning 2.0.0",
+      "publisher": "Tom Preston-Werner",
+      "url": "https://semver.org"
+    },
+    {
+      "id": "wcag",
+      "name": "Web Content Accessibility Guidelines 2.2",
+      "publisher": "W3C",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    }
+  ],
   "levels": [
     {
       "level": 1,
       "id": "ad-hoc",
       "minScore": 1,
-      "name": { "en": "Ad hoc", "de": "Ad hoc" },
+      "name": {
+        "en": "Ad hoc",
+        "de": "Ad hoc"
+      },
       "summary": {
         "en": "Work happens, but it depends on individuals. Practices are improvised per project and rarely survive a team change.",
         "de": "Es wird geliefert, aber es hängt an einzelnen Personen. Praktiken werden pro Projekt improvisiert und überstehen selten einen Teamwechsel."
@@ -26,7 +73,10 @@
       "level": 2,
       "id": "emerging",
       "minScore": 1.5,
-      "name": { "en": "Emerging", "de": "Entstehend" },
+      "name": {
+        "en": "Emerging",
+        "de": "Entstehend"
+      },
       "summary": {
         "en": "First shared conventions exist and are repeated, but they are informal, unevenly applied and not yet written down for everyone.",
         "de": "Erste gemeinsame Konventionen existieren und werden wiederholt, sind aber informell, ungleich angewendet und noch nicht für alle dokumentiert."
@@ -36,7 +86,10 @@
       "level": 3,
       "id": "established",
       "minScore": 2.5,
-      "name": { "en": "Established", "de": "Etabliert" },
+      "name": {
+        "en": "Established",
+        "de": "Etabliert"
+      },
       "summary": {
         "en": "Practices are defined, documented and expected. New teams can follow them without asking the core team first.",
         "de": "Praktiken sind definiert, dokumentiert und verbindlich. Neue Teams können ihnen folgen, ohne vorher das Kernteam zu fragen."
@@ -46,7 +99,10 @@
       "level": 4,
       "id": "managed",
       "minScore": 3.5,
-      "name": { "en": "Managed", "de": "Gesteuert" },
+      "name": {
+        "en": "Managed",
+        "de": "Gesteuert"
+      },
       "summary": {
         "en": "The system is measured and steered: adoption, quality and change are tracked with numbers, and decisions follow the data.",
         "de": "Das System wird gemessen und gesteuert: Adoption, Qualität und Veränderung werden mit Zahlen verfolgt, Entscheidungen folgen den Daten."
@@ -56,7 +112,10 @@
       "level": 5,
       "id": "optimising",
       "minScore": 4.5,
-      "name": { "en": "Optimising", "de": "Optimierend" },
+      "name": {
+        "en": "Optimising",
+        "de": "Optimierend"
+      },
       "summary": {
         "en": "The system improves itself. Feedback loops are automated, contribution is routine, and the team spends its energy on the next problem rather than on upkeep.",
         "de": "Das System verbessert sich selbst. Feedback-Schleifen sind automatisiert, Beiträge sind Routine, und das Team steckt seine Energie in das nächste Problem statt in Instandhaltung."
@@ -66,7 +125,10 @@
   "categories": [
     {
       "id": "documentation",
-      "name": { "en": "Documentation", "de": "Dokumentation" },
+      "name": {
+        "en": "Documentation",
+        "de": "Dokumentation"
+      },
       "description": {
         "en": "Can someone use the system correctly without talking to the team that built it?",
         "de": "Kann jemand das System korrekt nutzen, ohne mit dem Team zu sprechen, das es gebaut hat?"
@@ -74,7 +136,10 @@
     },
     {
       "id": "versioning",
-      "name": { "en": "Versioning", "de": "Versionierung" },
+      "name": {
+        "en": "Versioning",
+        "de": "Versionierung"
+      },
       "description": {
         "en": "Can the system change without breaking its consumers by surprise?",
         "de": "Kann sich das System verändern, ohne die Konsument:innen überraschend zu brechen?"
@@ -82,7 +147,10 @@
     },
     {
       "id": "governance",
-      "name": { "en": "Governance", "de": "Governance" },
+      "name": {
+        "en": "Governance",
+        "de": "Governance"
+      },
       "description": {
         "en": "Is it clear who decides what, how work enters the system, and what 'done' means?",
         "de": "Ist klar, wer was entscheidet, wie Arbeit ins System kommt und was „fertig“ bedeutet?"
@@ -90,7 +158,10 @@
     },
     {
       "id": "adoption",
-      "name": { "en": "Adoption", "de": "Adoption" },
+      "name": {
+        "en": "Adoption",
+        "de": "Adoption"
+      },
       "description": {
         "en": "Is the system actually used in production — and do you know how much?",
         "de": "Wird das System tatsächlich produktiv genutzt – und wisst ihr, in welchem Umfang?"

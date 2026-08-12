@@ -31,6 +31,29 @@ export interface AnswerOption {
   label: LocalizedText
 }
 
+/**
+ * A published model or standard a question was derived from.
+ *
+ * [Product] Attribution is what makes an assessment arguable. When a design
+ * system lead disagrees with question 14, the answer should be "here is where
+ * the criterion comes from", not "we thought it sounded right".
+ */
+export interface CatalogSource {
+  /** Short id referenced by questions, e.g. `curtis`. */
+  id: string
+  /** Title of the work, in its original language. Never translated. */
+  name: string
+  publisher: string
+  url?: string
+}
+
+export interface QuestionSource {
+  /** Must match a `CatalogSource.id` declared on the catalog. */
+  ref: string
+  /** Which criterion of that model this question draws on. */
+  criterion?: string
+}
+
 export interface Question {
   id: string
   categoryId: string
@@ -41,6 +64,9 @@ export interface Question {
   options: AnswerOption[]
   /** [UX] Free-text notes are always optional and never scored. */
   allowNote: boolean
+  /** Where the criterion comes from. Optional in the schema, required by
+   *  convention in the bundled catalog and enforced by its tests. */
+  sources?: QuestionSource[]
 }
 
 export interface Category {
@@ -83,6 +109,8 @@ export interface Catalog {
   levels: MaturityLevel[]
   categories: Category[]
   nextSteps: NextStepsMap
+  /** Bibliography. Questions cite entries from here by id. */
+  sources?: CatalogSource[]
 }
 
 export interface Answer {

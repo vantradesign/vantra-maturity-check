@@ -53,6 +53,12 @@
           "de": "Versionierte Packages, und ihr wisst, welche Version jedes Produkt einsetzt"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "rangle",
+        "criterion": "Distribution and tooling"
+      }
     ]
   },
   {
@@ -109,6 +115,12 @@
           "de": "Versionssprünge werden automatisch aus Changesets oder Commit-Metadaten abgeleitet"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "semver",
+        "criterion": "Version increment rules"
+      }
     ]
   },
   {
@@ -128,7 +140,10 @@
       {
         "id": "none",
         "score": 1,
-        "label": { "en": "No changelog", "de": "Kein Changelog" }
+        "label": {
+          "en": "No changelog",
+          "de": "Kein Changelog"
+        }
       },
       {
         "id": "commits",
@@ -161,6 +176,16 @@
           "en": "Generated and actively pushed to consumers with upgrade notes",
           "de": "Generiert und aktiv mit Upgrade-Hinweisen an die Teams verteilt"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "semver",
+        "criterion": "Communicating change"
+      },
+      {
+        "ref": "rangle",
+        "criterion": "Release communication"
       }
     ]
   },
@@ -218,6 +243,16 @@
           "de": "Warnungen plus Tracking, wer die veraltete API vor der Entfernung noch nutzt"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Deprecation and sunsetting"
+      },
+      {
+        "ref": "semver",
+        "criterion": "Backwards-compatibility contract"
+      }
     ]
   },
   {
@@ -274,6 +309,12 @@
           "de": "Token-Pipeline plus automatisierte Prüfung, die Abweichungen meldet"
         }
       }
+    ],
+    "sources": [
+      {
+        "ref": "rangle",
+        "criterion": "Design and code parity"
+      }
     ]
   },
   {
@@ -329,6 +370,16 @@
           "en": "Codemods plus the system team opening the upgrade pull requests",
           "de": "Codemods, und das Systemteam öffnet die Upgrade-Pull-Requests selbst"
         }
+      }
+    ],
+    "sources": [
+      {
+        "ref": "curtis",
+        "criterion": "Upgrade support and migration"
+      },
+      {
+        "ref": "rangle",
+        "criterion": "Consumer upgrade path"
       }
     ]
   }

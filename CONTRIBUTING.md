@@ -37,6 +37,15 @@ Rules the validator enforces (`pnpm test` will tell you precisely which path fai
 - **Answerable from memory.** If a team has to open three tools to answer, the question is too specific.
 - **Graded options that describe reality**, including the honest bottom option. Someone has to be able to pick option 1 without feeling accused.
 - **Help text that teaches.** The `help` field is often the most valuable part of the tool; use it to explain why the practice matters.
+- **Cited.** Every question carries a `sources` array naming the published model it derives from and the criterion it draws on:
+
+  ```json
+  "sources": [{ "ref": "curtis", "criterion": "Contribution models" }]
+  ```
+
+  Each `ref` must exist in `meta.json` under `sources`; add the work there if it is not listed yet. `packages/core/test/provenance.test.ts` fails the build for an uncited question, a citation without a criterion, or a `ref` that points nowhere. This is not bureaucracy: an assessment nobody can trace is an opinion with a number attached, and the first design system lead who disagrees with a question will ask where it came from.
+
+- **Honest about its assumptions.** If a question only makes sense for a particular size, platform or org shape, say so in the help text and add it to the assumptions list in [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 
 ### What makes a good next step
 
@@ -44,6 +53,8 @@ Rules the validator enforces (`pnpm test` will tell you precisely which path fai
 - **Level-appropriate.** A level-1 team needs "agree on one template", not "automate visual regression".
 - **Honestly tagged for effort.** `S` = days, `M` = weeks, `L` = a quarter.
 - **Says why, briefly.** One sentence of reasoning is what turns a checklist into an argument a team can take to planning.
+
+The level-1 and level-2 steps are checked automatically against a small vocabulary of things a struggling team cannot do for itself — hiring, headcount, executive sponsorship, budget approval, reorganisation. A step at those levels must be something the team can start on Monday with the authority it already has.
 
 Changing a question id, weight, or option scores changes what stored results mean. Bump `version` in `meta.json`: **minor** for additive wording, **major** for anything that makes previous results non-comparable.
 
