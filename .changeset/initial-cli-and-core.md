@@ -11,3 +11,4 @@ First working release: an interactive CLI that scores a design system across doc
 - JSON exports can be re-imported (`--from`) to compare two runs over time
 - URL-safe share payloads that never carry free-text notes
 - Catalogs are validated data, so the engine can assess other domains without a code change
+- The interactive flow is covered end to end by tests that drive the built binary through stdin

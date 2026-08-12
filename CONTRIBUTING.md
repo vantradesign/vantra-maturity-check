@@ -58,6 +58,16 @@ The engine is domain-agnostic. To assess something else — API governance, cont
 - Tests come with the change. Coverage thresholds are enforced at 80% branches / 90% lines.
 - Run `pnpm changeset` and describe the change from the user's point of view.
 
+### Tests
+
+| Command          | What it covers                                                            |
+| ---------------- | ------------------------------------------------------------------------- |
+| `pnpm test:unit` | The engine: scoring, catalogs, validation, share links, report rendering. |
+| `pnpm test:e2e`  | The prompts: spawns the built CLI and answers all 24 questions via stdin. |
+| `pnpm test`      | Both, after a build.                                                      |
+
+The e2e suite drives the real binary rather than importing `runInteractive()`, because the parts that break in practice — flag parsing, prompt order, exit codes, files landing on disk — only exist in the assembled program. It pipes stdin instead of allocating a pty, waits for output to go quiet before sending the next key, and asserts on text with ANSI escapes stripped. Never assert on cursor positioning or box-drawing; that is the part that legitimately changes when a dependency updates.
+
 ## Commits and pull requests
 
 Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`). Keep pull requests scoped to one thing; a question-wording change and a scoring change should not travel together.
