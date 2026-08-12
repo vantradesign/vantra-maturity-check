@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+
+/* Vantra token layer.
+   Mirrors the marketing site so the check does not feel like a different
+   product. Authored as CSS custom properties on purpose: readable by
+   @vantra-design/core's parseTokenSchema(), so Vantra governs its own tools
+   with its own tooling. */
+@theme {
+  --color-paper: #f5f2f3;
+  --color-ink: #001619;
+  --color-blue: #021f94;
+  --color-cyan: #50e8f4;
+  --color-cyan-soft: #c7f8fe;
+
+  /* Explicit values, not color-mix(): both are text colours, both verified
+     against paper. muted 6.67:1, faint 4.74:1. */
+  --color-ink-muted: #4a585a;
+  --color-ink-faint: #626e70;
+  --color-rule: color-mix(in oklab, #001619 12%, transparent);
+  --color-surface: #ffffff;
+
+  --color-pass: #14584c;
+  --color-fail: #8f1d13;
+
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inclusive Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --text-cover: clamp(2.75rem, 9vw, 7.5rem);
+  --text-cover--line-height: 0.95;
+  --text-cover--letter-spacing: -0.025em;
+  --text-cover--font-weight: 700;
+
+  --text-display: clamp(2.25rem, 5.5vw, 4rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-title: clamp(1.625rem, 3vw, 2.5rem);
+  --text-title--line-height: 1.1;
+  --text-title--letter-spacing: -0.015em;
+
+  --text-lead: clamp(1.1875rem, 1.6vw, 1.625rem);
+  --text-lead--line-height: 1.45;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.08em;
+
+  --spacing-gutter: clamp(1.25rem, 6vw, 7.5rem);
+  --spacing-section: clamp(4rem, 9vw, 8rem);
+
+  /* Header and step rail are both sticky and stack. Declared once so the rail
+     knows where the header ends without a hardcoded pixel guess. */
+  --header-height: 4.5rem;
+  --rail-height: 3.75rem;
+
+  --ease-editorial: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-cyan);
+    color: var(--color-ink);
+  }
+
+  /* [A11y] The wizard is operated by keyboard as often as by mouse — the focus
+     ring is load-bearing UI here, not a default to be tidied away. */
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 3px;
+  }
+
+  /* Tailwind v4 drops the browser default of `cursor: pointer` on buttons.
+     Restored globally rather than per-button so a control added later cannot
+     forget it. Disabled controls keep the default arrow. */
+  button:not(:disabled),
+  [role='button']:not(:disabled),
+  label:has(input[type='radio']:not(:disabled)) {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility measure {
+  max-width: 60ch;
+}
+
+@utility measure-tight {
+  max-width: 44ch;
+}
+
+@utility gutter {
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* Square by convention, not by oversight: nothing on vantra.design is rounded.
+   The hairline rule is the only container the editorial style uses. */
+@utility panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-rule);
+}
+
+/* Buttons match the site's control: a bordered rectangle at the 44px touch
+   minimum, colour-only transitions, never a radius. */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding-inline: 1.25rem;
+  padding-block: 0.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  letter-spacing: normal;
+  text-transform: none;
+  transition:
+    color 200ms var(--ease-editorial),
+    background-color 200ms var(--ease-editorial),
+    border-color 200ms var(--ease-editorial);
+}
+
+@utility btn-solid {
+  border-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+
+  &:hover {
+    border-color: var(--color-blue);
+    background-color: var(--color-blue);
+  }
+}
+
+@utility btn-quiet {
+  border-color: var(--color-rule);
+  color: var(--color-ink);
+
+  &:hover {
+    border-color: var(--color-ink);
+  }
+}
