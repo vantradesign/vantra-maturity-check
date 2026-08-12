@@ -106,34 +106,42 @@ program
     const locale = detectLocale(options.lang)
     const catalog = getCatalog(options.catalog)
 
-    p.intro(pc.bgCyan(pc.black(` ${m('intro', locale)} `)))
-    p.log.message(m('welcome', locale))
+    try {
+      p.intro(pc.bgCyan(pc.black(` ${m('intro', locale)} `)))
+      p.log.message(m('welcome', locale))
 
-    let initialAnswers: AnswerSet = {}
-    if (options.from) {
-      initialAnswers = await readAnswersFile(catalog, options.from)
-      p.log.info(`${m('resumed', locale)} ${options.from}`)
+      let initialAnswers: AnswerSet = {}
+      if (options.from) {
+        initialAnswers = await readAnswersFile(catalog, options.from)
+        p.log.info(`${m('resumed', locale)} ${options.from}`)
+      }
+
+      const { answers, cancelled } = await runInteractive({
+        catalog,
+        locale,
+        initialAnswers,
+        askNotes: options.notes,
+      })
+
+      if (cancelled) {
+        p.cancel(m('cancelled', locale))
+        process.exitCode = 130
+        return
+      }
+      if (Object.keys(answers).length === 0) {
+        p.outro(m('noAnswers', locale))
+        return
+      }
+
+      await exportResult(catalog, answers, locale, options, true)
+      p.outro(m('outro', locale))
+    } finally {
+      // Release stdin once the prompts are done. `pause()` stops the reads but
+      // leaves the handle referenced, so a piped stdin would keep the event
+      // loop alive forever and `echo | vantra-maturity-check` would hang.
+      process.stdin.pause()
+      process.stdin.unref()
     }
-
-    const { answers, cancelled } = await runInteractive({
-      catalog,
-      locale,
-      initialAnswers,
-      askNotes: options.notes,
-    })
-
-    if (cancelled) {
-      p.cancel(m('cancelled', locale))
-      process.exitCode = 130
-      return
-    }
-    if (Object.keys(answers).length === 0) {
-      p.outro(m('noAnswers', locale))
-      return
-    }
-
-    await exportResult(catalog, answers, locale, options, true)
-    p.outro(m('outro', locale))
   })
 
 program
