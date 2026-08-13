@@ -1,6 +1,6 @@
 ---
-'@vantra/maturity-check': minor
-'@vantra/maturity-core': minor
+'@vantra-design/maturity-check': minor
+'@vantra-design/maturity-core': minor
 ---
 
 First working release: an interactive CLI that scores a design system across documentation, versioning, governance and adoption, and returns three level-appropriate next steps per dimension.

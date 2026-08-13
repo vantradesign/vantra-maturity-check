@@ -9,7 +9,7 @@ import {
   type Catalog,
   type Locale,
   type LocalizedText,
-} from '@vantra/maturity-core'
+} from '@vantra-design/maturity-core'
 import { messages, type MessageKey } from '~/i18n/messages'
 
 /**
@@ -65,10 +65,24 @@ export function useAnswers() {
   return useState<AnswerSet>('answers', () => ({}))
 }
 
+/**
+ * True while the displayed answers came from a share link rather than from this
+ * device.
+ *
+ * [UX] Two things depend on it: the result page says so out loud, and `persist()`
+ * refuses to write. Without the second, `app.vue`'s `watch([answers, locale],
+ * persist)` overwrites the visitor's own stored answers the instant a shared link
+ * is decoded — silently, before they touch anything.
+ */
+export function useIsSharedView() {
+  return useState<boolean>('isSharedView', () => false)
+}
+
 export function useAssessment() {
   const catalog = useCatalog()
   const answers = useAnswers()
   const locale = useLocale()
+  const isSharedView = useIsSharedView()
 
   const total = computed(() => catalog.categories.reduce((sum, c) => sum + c.questions.length, 0))
   const answered = computed(() => Object.keys(answers.value).length)
@@ -109,6 +123,7 @@ export function useAssessment() {
 
   function reset() {
     answers.value = {}
+    isSharedView.value = false
     if (import.meta.client) localStorage.removeItem(STORAGE_KEY)
   }
 
@@ -138,6 +153,9 @@ export function useAssessment() {
 
   function persist(): void {
     if (!import.meta.client) return
+    // Someone else's result is not this device's state. See useIsSharedView().
+    if (isSharedView.value) return
+
     const state: StoredState = {
       catalogVersion: catalog.version,
       answers: answers.value,
@@ -150,6 +168,7 @@ export function useAssessment() {
     catalog,
     answers,
     locale,
+    isSharedView,
     total,
     answered,
     progress,

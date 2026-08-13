@@ -8,7 +8,7 @@ Short records of choices that are expensive to reverse. Each says what was decid
 
 **Why:** the people who can honestly answer "is accessibility behaviour documented per component" are design system leads, designers and design ops. A meaningful share of them will not run `npx`. A maturity check also works best as a workshop instrument — a shared screen, all five options visible at once, the freedom to jump back to question 7 — which a terminal prompt list structurally cannot offer.
 
-**Why the CLI was still built first:** it forced `@vantra/maturity-core` to be pure, dependency-free and platform-neutral before any framework could leak into it. That was the right engineering sequencing, and the web app inherits a tested engine.
+**Why the CLI was still built first:** it forced `@vantra-design/maturity-core` to be pure, dependency-free and platform-neutral before any framework could leak into it. That was the right engineering sequencing, and the web app inherits a tested engine.
 
 **Consequence:** do not invest in CLI features that duplicate the web app. The CLI's remaining differentiator is running non-interactively in CI against a stored answers file.
 
@@ -44,3 +44,21 @@ Short records of choices that are expensive to reverse. Each says what was decid
 **Decided:** question provenance, a written methodology, an assumption audit and a next-step level review come before the web app is built.
 
 **Why:** the questions are the product; both surfaces are renderers. A polished UI over questions nobody can defend is a worse asset than a plain UI over questions that hold up when a design system lead pushes back on question 14.
+
+## 5. The npm scope is `@vantra-design`, not `@vantra`
+
+**Decided:** publish as `@vantra-design/maturity-check` and `@vantra-design/maturity-core`. Both packages were renamed before the first publish.
+
+**Why:** the org already owns and publishes under `@vantra-design` — `@vantra-design/core` is on npm at `0.1.2` — and `vantra-governance-suite/DECISIONS.md` §1 fixes that scope for the whole organisation. This repo had been authored against a third spelling, `@vantra`, which was registered nowhere and matched no other package in the org.
+
+**Why it had to be settled before publishing rather than after:** an npm name can be unpublished for 72 hours and is then burned permanently. Shipping under `@vantra` would have split the org's npm surface across two scopes for good, and made the governance-suite decision record false.
+
+**Rejected:** registering the `@vantra` org because `npx @vantra/maturity-check` is shorter to type. Three characters of convenience is not worth a permanently fragmented namespace, and the scope's availability was never verified.
+
+**Note on the three spellings** — all correct in their own namespace, which is exactly why this is easy to get wrong:
+
+| Namespace           | Spelling         |
+| ------------------- | ---------------- |
+| GitHub organisation | `vantradesign`   |
+| npm scope           | `@vantra-design` |
+| Domain              | `vantra.design`  |

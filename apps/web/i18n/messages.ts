@@ -1,10 +1,10 @@
-import type { LocalizedText } from '@vantra/maturity-core'
+import type { LocalizedText } from '@vantra-design/maturity-core'
 
 /**
  * The app's own copy, in both declared locales.
  *
  * [IA] Catalog text (questions, levels, next steps) is translated in the
- * catalog, and report text in `@vantra/maturity-core`'s `ui()`. This file is
+ * catalog, and report text in `@vantra-design/maturity-core`'s `ui()`. This file is
  * only for chrome the web app adds around them — page headings, buttons,
  * caveats. Keeping the three separate is what lets the CLI and the web app
  * share the first two without inheriting each other's layout copy.
@@ -160,6 +160,35 @@ export const messages = {
     en: 'Delete my answers from this device',
     de: 'Meine Antworten von diesem Gerät löschen',
   },
+  resultDeleteConfirmQuestion: {
+    en: 'Delete all answers? This cannot be undone.',
+    de: 'Alle Antworten löschen? Das lässt sich nicht rückgängig machen.',
+  },
+  resultDeleteConfirmYes: { en: 'Yes, delete them', de: 'Ja, löschen' },
+  resultDeleteCancel: { en: 'Keep them', de: 'Behalten' },
+  resultDeleteExportFirst: {
+    en: 'Download the JSON file first if you want a record — it is the only copy.',
+    de: 'Ladet vorher die JSON-Datei herunter, wenn ihr einen Beleg möchtet — es ist die einzige Kopie.',
+  },
+  resultDeleted: {
+    en: 'Answers deleted from this device.',
+    de: 'Antworten von diesem Gerät gelöscht.',
+  },
+
+  resultCopyFailed: {
+    en: 'Could not access the clipboard — copy the link from the address bar instead.',
+    de: 'Zugriff auf die Zwischenablage nicht möglich — kopiert den Link stattdessen aus der Adressleiste.',
+  },
+
+  // [UX] A shared link shows someone else's answers. Saying so is the difference
+  // between reading a colleague's result and mistaking it for your own.
+  sharedViewTitle: { en: 'You are viewing a shared result', de: 'Ihr seht ein geteiltes Ergebnis' },
+  sharedViewBody: {
+    en: 'These answers came from the link you opened, not from this device. Your own answers, if you have any, are still stored here untouched.',
+    de: 'Diese Antworten stammen aus dem geöffneten Link, nicht von diesem Gerät. Eure eigenen Antworten liegen — falls vorhanden — unverändert hier.',
+  },
+  sharedViewStartOwn: { en: 'Start my own check', de: 'Eigenen Check starten' },
+  sharedViewSeeMine: { en: 'Show my own result', de: 'Mein eigenes Ergebnis zeigen' },
 
   effortS: { en: 'Days', de: 'Tage' },
   effortM: { en: 'Weeks', de: 'Wochen' },

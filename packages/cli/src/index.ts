@@ -11,7 +11,7 @@ import {
   toJsonExport,
   type AnswerSet,
   type Locale,
-} from '@vantra/maturity-core'
+} from '@vantra-design/maturity-core'
 import { runInteractive } from './interactive.js'
 import { renderTerminalReport } from './render.js'
 import { readAnswersFile, timestampedName, writeTextFile } from './io.js'

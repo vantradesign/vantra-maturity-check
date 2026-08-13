@@ -10,7 +10,7 @@ import {
   type Catalog,
   type LevelNumber,
   type Locale,
-} from '@vantra/maturity-core'
+} from '@vantra-design/maturity-core'
 
 /**
  * [UX] Terminal report. Colour carries no information on its own — every bar is

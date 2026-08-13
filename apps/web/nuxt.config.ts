@@ -1,5 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
-import { designSystemCatalog } from '@vantra/maturity-core'
+import { designSystemCatalog } from '@vantra-design/maturity-core'
 
 /**
  * The app is generated to static files and deployed to a CDN.

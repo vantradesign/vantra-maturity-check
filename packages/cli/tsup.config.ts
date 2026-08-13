@@ -9,8 +9,8 @@ export default defineConfig({
   dts: false,
   sourcemap: false,
   banner: { js: '#!/usr/bin/env node' },
-  // `@vantra/maturity-core` is bundled in so a global `npx` run never depends on the
+  // `@vantra-design/maturity-core` is bundled in so a global `npx` run never depends on the
   // workspace layout; the interactive dependencies stay external and are
   // installed from the lockfile.
-  noExternal: ['@vantra/maturity-core'],
+  noExternal: ['@vantra-design/maturity-core'],
 })

@@ -2,10 +2,10 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [["@vantra/maturity-core", "@vantra/maturity-check"]],
+  "fixed": [["@vantra-design/maturity-core", "@vantra-design/maturity-check"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@vantra/maturity-web"]
+  "ignore": ["@vantra-design/maturity-web"]
 }

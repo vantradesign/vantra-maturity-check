@@ -1,8 +1,8 @@
-import type { Locale, LocalizedText } from '@vantra/maturity-core'
-import { t } from '@vantra/maturity-core'
+import type { Locale, LocalizedText } from '@vantra-design/maturity-core'
+import { t } from '@vantra-design/maturity-core'
 
 /**
- * CLI-only copy. Everything a report contains lives in `@vantra/maturity-core` so the web
+ * CLI-only copy. Everything a report contains lives in `@vantra-design/maturity-core` so the web
  * app renders the identical document; only the conversational wrapper below is
  * terminal-specific.
  */

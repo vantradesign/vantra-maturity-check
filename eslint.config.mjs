@@ -44,4 +44,19 @@ export default tseslint.config(
       'no-console': 'off',
     },
   },
+  {
+    // Maintenance scripts are plain Node programs whose whole purpose is to
+    // report to stdout, so Node globals and `console.log` are expected there.
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        fetch: 'readonly',
+        process: 'readonly',
+      },
+    },
+    rules: {
+      'no-console': 'off',
+    },
+  },
 )

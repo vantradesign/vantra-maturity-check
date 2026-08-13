@@ -80,10 +80,28 @@
   }
 
   /* [A11y] The wizard is operated by keyboard as often as by mouse — the focus
-     ring is load-bearing UI here, not a default to be tidied away. */
+     ring is load-bearing UI here, not a default to be tidied away.
+
+     Two-tone by necessity: --color-blue is 11.61:1 against --color-paper but only
+     1.44:1 against --color-ink, which fails WCAG 2.2 SC 1.4.11 (3:1 for non-text)
+     on every dark surface — `.btn-solid`, the focused skip link, and the active
+     state of any ink-backed control. The paper halo sits outside the outline so
+     one of the two rings always contrasts with the backdrop. The brand token is
+     unchanged; do not collapse this to a single outline without re-measuring
+     against ink. */
   :focus-visible {
     outline: 2px solid var(--color-blue);
     outline-offset: 3px;
+    box-shadow: 0 0 0 5px var(--color-paper);
+  }
+
+  /* Fallback for browsers without :focus-visible. Plain outline: there it would
+     also fire on mouse clicks, where the halo would be noise. */
+  @supports not (selector(:focus-visible)) {
+    :focus {
+      outline: 2px solid var(--color-blue);
+      outline-offset: 3px;
+    }
   }
 
   /* Tailwind v4 drops the browser default of `cursor: pointer` on buttons.

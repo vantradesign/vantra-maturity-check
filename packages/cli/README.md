@@ -1,4 +1,4 @@
-# @vantra/maturity-check
+# @vantra-design/maturity-check
 
 > The CLI of the **Vantra Maturity Check**. Installed commands: `vantra-maturity-check` and the short alias `vmc`.
 
@@ -7,7 +7,7 @@ An interactive CLI that scores your design system across four dimensions — **d
 No account, no telemetry, no network calls. Everything happens on your machine.
 
 ```bash
-npx @vantra/maturity-check
+npx @vantra-design/maturity-check
 ```
 
 ## What you get
@@ -36,19 +36,19 @@ Each next step is tied to the level you are actually at, so a level-2 team is ne
 
 ```bash
 # Interactive run, language taken from your shell locale
-npx @vantra/maturity-check
+npx @vantra-design/maturity-check
 
 # German, write both exports without being asked
-npx @vantra/maturity-check --lang de --markdown report.md --json result.json
+npx @vantra-design/maturity-check --lang de --markdown report.md --json result.json
 
 # Resume from a previous run and only revisit what changed
-npx @vantra/maturity-check --from result.json
+npx @vantra-design/maturity-check --from result.json
 
 # Re-render a report from an export, no prompts (CI-friendly)
-npx @vantra/maturity-check report --from result.json --markdown report.md
+npx @vantra-design/maturity-check report --from result.json --markdown report.md
 
 # Print the bundled question catalog as JSON
-npx @vantra/maturity-check catalog > catalog.json
+npx @vantra-design/maturity-check catalog > catalog.json
 ```
 
 ### Options
@@ -69,9 +69,9 @@ Colour output honours `NO_COLOR`. Every bar is accompanied by its numeric score 
 The JSON export is the whole persistence story: run the check, keep the file, run it again next quarter and diff the two.
 
 ```bash
-npx @vantra/maturity-check --json 2026-q1.json
+npx @vantra-design/maturity-check --json 2026-q1.json
 # … a quarter later …
-npx @vantra/maturity-check --from 2026-q1.json --json 2026-q2.json
+npx @vantra-design/maturity-check --from 2026-q1.json --json 2026-q2.json
 diff <(jq .result.categories 2026-q1.json) <(jq .result.categories 2026-q2.json)
 ```
 

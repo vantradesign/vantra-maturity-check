@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { findLevel, type AssessmentResult } from '@vantra/maturity-core'
+import { findLevel, type AssessmentResult } from '@vantra-design/maturity-core'
 
 /**
  * The numbers behind the radar. [A11y] This is the accessible version of the

@@ -5,7 +5,7 @@ A self-assessment that tells a design-system team **where they actually are** an
 24 questions. Ten minutes. No account, no telemetry, no network calls.
 
 ```bash
-npx @vantra/maturity-check
+npx @vantra-design/maturity-check
 ```
 
 ## Why this exists
@@ -30,7 +30,7 @@ Five levels, from **Ad hoc** to **Optimising**, deliberately non-judgemental: th
 ```text
 packages/
   core/   Scoring engine, question catalog, report renderer — zero dependencies
-  cli/    Interactive terminal app (npx @vantra/maturity-check)
+  cli/    Interactive terminal app (npx @vantra-design/maturity-check)
   web/    Static assessment site (planned)
 ```
 
@@ -51,9 +51,9 @@ The number is a conversation starter, not a grade.
 There is no database. The JSON export _is_ the persistence layer:
 
 ```bash
-npx @vantra/maturity-check --json 2026-q1.json
+npx @vantra-design/maturity-check --json 2026-q1.json
 # … a quarter later …
-npx @vantra/maturity-check --from 2026-q1.json --json 2026-q2.json
+npx @vantra-design/maturity-check --from 2026-q1.json --json 2026-q2.json
 ```
 
 Free-text notes stay in local exports and are never encoded into a share link.

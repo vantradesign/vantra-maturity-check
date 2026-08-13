@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { AssessmentResult } from '@vantra/maturity-core'
+import type { AssessmentResult } from '@vantra-design/maturity-core'
 
 /**
  * Hand-drawn SVG rather than a charting library.

@@ -1,5 +1,5 @@
 {
-  "name": "@vantra/maturity-web",
+  "name": "@vantra-design/maturity-web",
   "version": "0.1.0",
   "private": true,
   "description": "Static web app for the Vantra Maturity Check. Runs entirely in the browser: no account, no telemetry, no network calls.",
@@ -8,14 +8,15 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt generate",
+    "build": "nuxt generate && node scripts/inject-csp-hashes.mjs",
+    "build:nocsp": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "clean": "rm -rf .nuxt .output dist"
   },
   "dependencies": {
-    "@vantra/maturity-core": "workspace:*",
+    "@vantra-design/maturity-core": "workspace:*",
     "nuxt": "^3.14.1592",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"

@@ -1,5 +1,5 @@
 {
-  "name": "@vantra/maturity-core",
+  "name": "@vantra-design/maturity-core",
   "version": "0.1.0",
   "description": "Framework-agnostic assessment engine, question catalog and scoring logic behind the Vantra Maturity Check.",
   "keywords": [

@@ -8,7 +8,7 @@ import {
   type Catalog,
   type Locale,
   type Question,
-} from '@vantra/maturity-core'
+} from '@vantra-design/maturity-core'
 import { m } from './messages.js'
 import { formatScore } from './render.js'
 

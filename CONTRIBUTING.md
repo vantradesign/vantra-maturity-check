@@ -64,7 +64,7 @@ The engine is domain-agnostic. To assess something else — API governance, cont
 
 ## Code changes
 
-- `@vantra/maturity-core` must stay dependency-free, pure and platform-neutral: no `fs`, no `process`, no `Date.now()` outside an injectable default. It runs in Node and in the browser.
+- `@vantra-design/maturity-core` must stay dependency-free, pure and platform-neutral: no `fs`, no `process`, no `Date.now()` outside an injectable default. It runs in Node and in the browser.
 - Anything user-visible in a report belongs in `core`, so the CLI and the web app cannot drift.
 - Tests come with the change. Coverage thresholds are enforced at 80% branches / 90% lines.
 - Run `pnpm changeset` and describe the change from the user's point of view.

@@ -1,6 +1,6 @@
-# @vantra/maturity-core
+# @vantra-design/maturity-core
 
-The scoring engine, question catalog and report renderer behind [`@vantra/maturity-check`](../cli/README.md). Zero runtime dependencies, no I/O, no `process` access — it runs unchanged in Node and in the browser.
+The scoring engine, question catalog and report renderer behind [`@vantra-design/maturity-check`](../cli/README.md). Zero runtime dependencies, no I/O, no `process` access — it runs unchanged in Node and in the browser.
 
 ## Why this is a separate package
 
@@ -14,7 +14,7 @@ import {
   scoreAssessment,
   renderMarkdownReport,
   recommendationsFor,
-} from '@vantra/maturity-core'
+} from '@vantra-design/maturity-core'
 
 const catalog = getCatalog()
 
@@ -63,7 +63,7 @@ recommendationsFor(catalog, result) // three next steps per category
 A catalog is data, not code. Validate your own against [`schema/catalog.schema.json`](./schema/catalog.schema.json), then:
 
 ```ts
-import { loadCatalog } from '@vantra/maturity-core'
+import { loadCatalog } from '@vantra-design/maturity-core'
 
 const catalog = loadCatalog(JSON.parse(await readFile('api-governance.json', 'utf-8')))
 ```

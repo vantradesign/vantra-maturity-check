@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Locale } from '@vantra/maturity-core'
+import type { Locale } from '@vantra-design/maturity-core'
 
 const locale = useLocale()
 const m = useMessages()

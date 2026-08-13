@@ -8,7 +8,7 @@ import { acceptDefaults, chooseOption, CLI_ENTRY, driveCli, KEY } from './drive.
 /**
  * End-to-end coverage of the interactive path.
  *
- * The unit tests in `@vantra/maturity-core` prove the scoring; these tests
+ * The unit tests in `@vantra-design/maturity-core` prove the scoring; these tests
  * prove that a human pressing keys reaches that scoring at all — the prompts
  * appear in order, answers are recorded against the right questions, notes are
  * captured, cancelling writes nothing, and the exports land on disk.

@@ -3,7 +3,7 @@ import { LOCALES, type Catalog, type Locale, type ValidationIssue } from './type
 /**
  * Hand-rolled validator instead of Ajv.
  *
- * [Engineering] `@vantra/maturity-core` ships with zero runtime dependencies so it can be
+ * [Engineering] `@vantra-design/maturity-core` ships with zero runtime dependencies so it can be
  * inlined into a static site without pulling a schema compiler into the client
  * bundle. `schema/catalog.schema.json` stays the normative contract for
  * contributors and editors; this function is the runtime guard that produces

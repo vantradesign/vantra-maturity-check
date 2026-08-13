@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Question } from '@vantra/maturity-core'
+import type { Question } from '@vantra-design/maturity-core'
 
 /**
  * One question as a radio group of full-width option cards.

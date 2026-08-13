@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
-import { sanitiseAnswers, type AnswerSet, type Catalog } from '@vantra/maturity-core'
+import { sanitiseAnswers, type AnswerSet, type Catalog } from '@vantra-design/maturity-core'
 
 export async function writeTextFile(path: string, contents: string): Promise<string> {
   const absolute = resolve(process.cwd(), path)
