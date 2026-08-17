@@ -4,7 +4,7 @@
   "private": true,
   "description": "Self-assessment tool that scores design-system maturity across documentation, versioning, governance and adoption — as an interactive CLI and as a static web app.",
   "license": "MIT",
-  "author": "Vantra Design <vantra@kauper.co>",
+  "author": "Vantra Design <hello@vantra.design>",
   "homepage": "https://github.com/vantradesign/vantra-maturity-check#readme",
   "repository": {
     "type": "git",

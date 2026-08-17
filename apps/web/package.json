@@ -4,7 +4,7 @@
   "private": true,
   "description": "Static web app for the Vantra Maturity Check. Runs entirely in the browser: no account, no telemetry, no network calls.",
   "license": "MIT",
-  "author": "Vantra Design <vantra@kauper.co>",
+  "author": "Vantra Design <hello@vantra.design>",
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
