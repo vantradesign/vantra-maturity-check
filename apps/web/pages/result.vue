@@ -183,184 +183,180 @@ useHead(() => ({ title: `${m('resultNextTitle')} — Vantra Maturity Check` }))
 </script>
 
 <template>
-  <div class="gutter py-section">
-    <!-- Until hydration the page cannot know the answers; showing a level here
-         would mean showing a wrong one for a frame. -->
-    <p v-if="!ready" class="caption">{{ m('resultLoading') }}</p>
+  <div>
+    <section class="gutter pt-16 md:pt-24">
+      <p class="caption">{{ m('resultAnsweredCount', { answered, total }) }}</p>
 
-    <template v-else-if="answered === 0">
-      <h1 class="measure font-display text-display font-bold">{{ m('resultEmptyTitle') }}</h1>
-      <p class="measure mt-4 text-lead text-ink-muted">{{ m('resultEmptyBody') }}</p>
-      <NuxtLink :to="`/check/${catalog.categories[0]!.id}`" class="btn btn-solid mt-8">
-        {{ m('introStart') }}
-      </NuxtLink>
-    </template>
+      <!-- ── Loading state ──────────────────────────────────────────── -->
+      <p v-if="!ready" class="mt-8 text-ink-muted">{{ m('resultLoading') }}</p>
 
-    <template v-else>
-      <!-- [UX] Above the score on purpose: by the time someone has read a level
-           and a number, they have already decided whose result it is. -->
-      <aside
-        v-if="isSharedView"
-        class="measure panel mb-8 border-l-2 border-l-blue px-4 py-4"
-        aria-labelledby="shared-view-title"
+      <!-- ── Shared-view banner ─────────────────────────────────────── -->
+      <div
+        v-if="ready && isSharedView"
+        role="status"
+        class="panel mt-8 px-6 py-5"
       >
-        <h2 id="shared-view-title" class="caption text-ink">{{ m('sharedViewTitle') }}</h2>
-        <p class="mt-2 text-caption normal-case tracking-normal text-ink-muted">
-          {{ m('sharedViewBody') }}
+        <p class="font-display text-title font-bold">{{ m('sharedViewTitle') }}</p>
+        <p class="mt-2 measure text-ink-muted">{{ m('sharedViewBody') }}</p>
+        <p
+          v-if="droppedFromLink === 1"
+          class="mt-2 text-ink-faint"
+        >
+          {{ m('resultDroppedOne') }}
         </p>
-        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2">
-          <button
-            type="button"
-            class="text-caption normal-case tracking-normal underline decoration-rule hover:decoration-ink"
-            @click="leaveSharedView"
-          >
+        <p
+          v-else-if="droppedFromLink > 1"
+          class="mt-2 text-ink-faint"
+        >
+          {{ m('resultDropped', { count: droppedFromLink }) }}
+        </p>
+        <div class="mt-4 flex flex-wrap gap-4">
+          <button type="button" class="btn btn-solid" @click="leaveSharedView">
             {{ m('sharedViewSeeMine') }}
           </button>
-          <button
-            type="button"
-            class="text-caption normal-case tracking-normal underline decoration-rule hover:decoration-ink"
-            @click="startMyOwnCheck"
-          >
+          <button type="button" class="btn btn-quiet" @click="startMyOwnCheck">
             {{ m('sharedViewStartOwn') }}
           </button>
         </div>
-      </aside>
-
-      <p class="caption">{{ m('resultAnsweredCount', { answered, total }) }}</p>
-
-      <!-- A link made with an older catalog can reference questions that no
-           longer exist. Silently dropping them would misstate the score. -->
-      <p
-        v-if="droppedFromLink > 0"
-        class="measure panel mt-4 px-4 py-3 text-caption normal-case tracking-normal text-ink-muted"
-      >
-        {{
-          droppedFromLink === 1
-            ? m('resultDroppedOne')
-            : m('resultDropped', { count: droppedFromLink })
-        }}
-      </p>
-
-      <div class="mt-4 grid gap-12 lg:grid-cols-[1fr_minmax(24rem,32rem)] lg:items-center">
-        <div>
-          <h1 class="measure font-display text-display font-bold">
-            {{
-              m('resultLevelHeading', { level: result.overall.level ?? '—', name: t(level?.name) })
-            }}
-          </h1>
-          <p class="measure mt-4 text-lead text-ink-muted">{{ t(level?.summary) }}</p>
-          <p class="mt-6 font-display text-title font-bold tabular-nums">
-            {{ result.overall.score?.toFixed(2) ?? '—' }}
-            <span class="text-ink-faint">/ 5.00</span>
-          </p>
-          <p
-            v-if="!isComplete"
-            class="measure mt-4 text-caption normal-case tracking-normal text-ink-muted"
-          >
-            {{ m('resultPartial') }}
-          </p>
-        </div>
-
-        <ScoreRadar :result="result" :labels="labels" />
       </div>
 
-      <section class="mt-section">
-        <ScoreTable :result="result" :labels="labels" />
-      </section>
+      <!-- ── Empty state ────────────────────────────────────────────── -->
+      <template v-if="ready && answered === 0 && !isSharedView">
+        <h1 class="mt-8 font-display text-display max-w-[26ch] text-balance">
+          {{ m('resultEmptyTitle') }}
+        </h1>
+        <p class="mt-6 text-lead measure text-ink-muted">{{ m('resultEmptyBody') }}</p>
+        <NuxtLink :to="`/check/${catalog.categories[0]!.id}`" class="btn btn-solid mt-8">
+          {{ m('introStart') }}
+        </NuxtLink>
+      </template>
 
-      <section class="mt-section">
-        <h2 class="font-display text-title font-bold">{{ m('resultNextTitle') }}</h2>
-        <p class="measure mt-3 text-ink-muted">
-          {{ m('resultNextLead', { marker: m('resultStartHere').toLowerCase() }) }}
+      <!-- ── Result view ─────────────────────────────────────────────── -->
+      <template v-else-if="ready && answered > 0">
+        <h1 class="mt-8 font-display text-display max-w-[26ch] text-balance">
+          <template v-if="level">
+            {{ m('resultLevelHeading', { level: result.overall.level ?? '—', name: t(level.name) }) }}
+          </template>
+        </h1>
+
+        <p class="mt-4 text-ink-muted tabular-nums">
+          {{ result.overall.score?.toFixed(2) ?? '—' }}
+          <span class="text-ink-faint">/ 5.00</span>
         </p>
 
-        <div class="mt-8 grid gap-8 md:grid-cols-2">
-          <article v-for="entry in plan" :key="entry.id" class="panel p-6">
-            <header class="flex items-baseline justify-between gap-3">
-              <h3 class="font-display text-lead font-bold">{{ entry.name }}</h3>
-              <span v-if="entry.isPriority" class="caption text-blue">
-                {{ m('resultStartHere') }}
-              </span>
-            </header>
-            <ol class="mt-4 grid gap-4">
-              <li v-for="step in entry.steps" :key="step.id">
-                <p class="font-bold">{{ t(step.title) }}</p>
-                <p class="mt-1 text-ink-muted">{{ t(step.detail) }}</p>
-                <p class="caption mt-1">{{ effortLabel[step.effort] }}</p>
-              </li>
-            </ol>
-          </article>
-        </div>
-      </section>
+        <p v-if="level" class="mt-4 measure text-lead text-ink-muted">{{ t(level.summary) }}</p>
 
-      <section class="mt-section">
-        <h2 class="font-display text-title font-bold">{{ m('resultExportTitle') }}</h2>
-        <p class="measure mt-3 text-ink-muted">{{ m('resultExportLead') }}</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <button type="button" class="btn btn-solid" @click="downloadMarkdown">
-            {{ m('resultDownloadMarkdown') }}
-          </button>
-          <button type="button" class="btn btn-quiet" @click="downloadJson">
-            {{ m('resultDownloadJson') }}
-          </button>
-          <button type="button" class="btn btn-quiet" @click="copyShareLink">
-            {{ m('resultCopyLink') }}
-          </button>
-        </div>
-        <!-- [A11y] role=status so the outcome of pressing Copy is announced, not
-             only shown. Failure is the case that actually needs saying. -->
         <p
-          v-if="copied || copyFailed"
-          role="status"
-          class="measure mt-3 text-caption normal-case tracking-normal"
-          :class="copyFailed ? 'text-fail' : 'text-ink-muted'"
+          v-if="!isComplete"
+          class="mt-2 text-ink-faint"
         >
-          {{ copyFailed ? m('resultCopyFailed') : m('resultLinkCopied') }}
+          {{ m('resultPartial') }}
         </p>
 
-        <p class="measure mt-3 text-caption normal-case tracking-normal text-ink-faint">
-          {{ m('resultShareNote') }}
-        </p>
-      </section>
-
-      <section class="mt-section measure">
-        <h2 class="caption">{{ m('resultCaveatTitle') }}</h2>
-        <p class="mt-4 text-ink-muted">{{ m('resultCaveatBody') }}</p>
-        <!-- [UX] Twenty-four answers, one click, no undo. It asks first. -->
-        <p
-          v-if="deleted"
-          role="status"
-          class="mt-6 text-caption normal-case tracking-normal text-ink-muted"
-        >
-          {{ m('resultDeleted') }}
-        </p>
-
-        <button
-          v-else-if="!confirmingDelete"
-          type="button"
-          class="mt-6 text-caption normal-case tracking-normal underline decoration-rule hover:decoration-ink"
-          @click="confirmingDelete = true"
-        >
-          {{ m('resultDelete') }}
-        </button>
-
-        <div v-else class="panel mt-6 px-4 py-4">
-          <p class="text-caption normal-case tracking-normal text-ink">
-            {{ m('resultDeleteConfirmQuestion') }}
-          </p>
-          <p class="mt-2 text-caption normal-case tracking-normal text-ink-faint">
-            {{ m('resultDeleteExportFirst') }}
-          </p>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <button type="button" class="btn btn-quiet" @click="confirmingDelete = false">
-              {{ m('resultDeleteCancel') }}
-            </button>
-            <button type="button" class="btn btn-solid" @click="confirmDelete">
-              {{ m('resultDeleteConfirmYes') }}
-            </button>
+        <!-- ── Radar + table ───────────────────────────────────────── -->
+        <div class="mt-16 md:grid md:grid-cols-12 md:gap-x-8">
+          <div class="md:col-span-5">
+            <ScoreRadar :result="result" :labels="labels" />
+          </div>
+          <div class="md:col-span-7 mt-8 md:mt-0">
+            <ScoreTable :result="result" :labels="labels" />
           </div>
         </div>
-      </section>
-    </template>
+
+        <!-- ── Next steps ──────────────────────────────────────────── -->
+        <section class="mt-section border-t border-ink pt-8">
+          <h2 class="caption">{{ m('resultNextTitle') }}</h2>
+          <p class="mt-4 measure text-ink-muted">
+            {{ m('resultNextLead', { marker: m('resultStartHere').toLowerCase() }) }}
+          </p>
+
+          <div class="mt-12 grid gap-14 md:grid-cols-2">
+            <div v-for="entry in plan" :key="entry.id">
+              <h3 class="font-display text-title font-bold">
+                {{ entry.name }}
+                <span v-if="entry.isPriority" class="ml-2 text-blue">
+                  ← {{ m('resultStartHere') }}
+                </span>
+              </h3>
+              <ol class="mt-5 space-y-4">
+                <li
+                  v-for="(ns, i) in entry.steps"
+                  :key="ns.id"
+                  class="border-l-2 border-rule pl-5"
+                  :class="{ 'border-blue': i === 0 && entry.isPriority }"
+                >
+                  <p class="font-display font-bold">{{ t(ns.title) }}</p>
+                  <p class="mt-1 measure text-ink-muted">{{ t(ns.detail) }}</p>
+                  <p class="mt-1 text-caption normal-case tracking-normal text-ink-faint">
+                    {{ effortLabel[ns.effort] }}
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Export & share ──────────────────────────────────────── -->
+        <section class="mt-section border-t border-ink pt-8">
+          <h2 class="caption">{{ m('resultExportTitle') }}</h2>
+          <p class="mt-4 measure text-ink-muted">{{ m('resultExportLead') }}</p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <button type="button" class="btn btn-quiet" @click="downloadMarkdown">
+              {{ m('resultDownloadMarkdown') }}
+            </button>
+            <button type="button" class="btn btn-quiet" @click="downloadJson">
+              {{ m('resultDownloadJson') }}
+            </button>
+            <button type="button" class="btn btn-solid" @click="copyShareLink">
+              {{ copied ? m('resultLinkCopied') : m('resultCopyLink') }}
+            </button>
+          </div>
+          <p
+            v-if="copied || copyFailed"
+            role="status"
+            class="mt-3 text-ink-muted"
+            :class="{ 'text-fail': copyFailed }"
+          >
+            {{ copyFailed ? m('resultCopyFailed') : m('resultShareNote') }}
+          </p>
+        </section>
+
+        <!-- ── Caveat ──────────────────────────────────────────────── -->
+        <section class="mt-section border-t border-rule pt-8">
+          <h2 class="caption">{{ m('resultCaveatTitle') }}</h2>
+          <p class="mt-4 measure text-ink-muted">{{ m('resultCaveatBody') }}</p>
+        </section>
+
+        <!-- ── Delete ──────────────────────────────────────────────── -->
+        <section v-if="!isSharedView" class="mt-section border-t border-rule pt-8 pb-16">
+          <button
+            v-if="!confirmingDelete && !deleted"
+            type="button"
+            class="text-caption normal-case tracking-normal text-ink-muted underline decoration-rule hover:text-ink"
+            @click="confirmingDelete = true"
+          >
+            {{ m('resultDelete') }}
+          </button>
+
+          <div v-if="confirmingDelete" class="panel max-w-lg px-6 py-5">
+            <p class="font-display font-bold">{{ m('resultDeleteConfirmQuestion') }}</p>
+            <p class="mt-2 text-ink-muted">{{ m('resultDeleteExportFirst') }}</p>
+            <div class="mt-4 flex flex-wrap gap-4">
+              <button type="button" class="btn btn-quiet" @click="confirmingDelete = false">
+                {{ m('resultDeleteCancel') }}
+              </button>
+              <button type="button" class="btn btn-solid" @click="confirmDelete">
+                {{ m('resultDeleteConfirmYes') }}
+              </button>
+            </div>
+          </div>
+
+          <p v-if="deleted" role="status" class="text-ink-muted">
+            {{ m('resultDeleted') }}
+          </p>
+        </section>
+      </template>
+    </section>
   </div>
 </template>

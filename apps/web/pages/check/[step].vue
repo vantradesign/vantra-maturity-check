@@ -47,44 +47,43 @@ useHead(() => ({
 </script>
 
 <template>
-  <div v-if="category && step" class="pb-40">
+  <div v-if="category && step">
     <WizardProgress :current-index="step.index" />
 
-    <div class="gutter">
-      <header class="pt-12">
-        <p class="caption">{{ m('stepOf', { number: step.number, total: step.of }) }}</p>
-        <h1 class="measure mt-3 font-display text-display font-bold">{{ t(category.name) }}</h1>
-        <p class="measure mt-4 text-lead text-ink-muted">{{ t(category.description) }}</p>
-        <p class="mt-4 text-caption normal-case tracking-normal text-ink-faint">
-          {{ m('stepSkipNote') }}
-        </p>
+    <section class="gutter py-10 md:py-14">
+      <header class="mb-10 md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-8 md:col-start-5">
+          <p class="caption">
+            {{ m('stepOf', { number: step.number, total: step.of }) }}
+          </p>
+          <h1 class="mt-3 font-display text-display max-w-[20ch] text-balance">
+            {{ t(category.name) }}
+          </h1>
+          <p class="mt-4 measure text-ink-muted">{{ t(category.description) }}</p>
+          <p class="mt-2 text-ink-faint">{{ m('stepSkipNote') }}</p>
+        </div>
       </header>
 
-      <div class="mt-12 grid gap-12">
-        <QuestionBlock
-          v-for="(question, index) in category.questions"
-          :key="question.id"
-          :question="question"
-          :index="firstQuestionNumber + index"
-        />
+      <div class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-8 md:col-start-5 space-y-10">
+          <QuestionBlock
+            v-for="(question, index) in category.questions"
+            :key="question.id"
+            :question="question"
+            :index="firstQuestionNumber + index"
+          />
+        </div>
       </div>
-    </div>
 
-    <!-- Fixed action bar: the primary action stays one reach away on a phone,
-         mirroring the sticky header and rail at the other end of the screen. -->
-    <div class="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-paper/95 backdrop-blur">
-      <div class="gutter flex items-center justify-between gap-4 py-4">
-        <NuxtLink
-          :to="backTo"
-          class="btn btn-quiet border-transparent underline decoration-rule hover:border-transparent hover:decoration-ink"
-        >
-          {{ m('stepBack') }}
-        </NuxtLink>
+      <nav class="mt-14 md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-8 md:col-start-5 flex flex-wrap items-center gap-4">
+          <NuxtLink
+            :to="backTo"
+            class="btn btn-quiet"
+          >
+            {{ m('stepBack') }}
+          </NuxtLink>
 
-        <div class="flex items-center gap-4">
-          <p class="text-caption normal-case tracking-normal text-ink-muted">
-            {{ m('stepAnswered', { answered: answeredHere, total: questionCount }) }}
-          </p>
           <button type="button" class="btn btn-solid" @click="goNext">
             {{
               step.next
@@ -94,8 +93,12 @@ useHead(() => ({
                   : m('stepSkipToResult')
             }}
           </button>
+
+          <span class="ml-auto text-caption normal-case tracking-normal text-ink-faint tabular-nums">
+            {{ m('stepAnswered', { answered: answeredHere, total: questionCount }) }}
+          </span>
         </div>
-      </div>
-    </div>
+      </nav>
+    </section>
   </div>
 </template>

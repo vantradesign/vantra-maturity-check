@@ -16,6 +16,7 @@ const { answeredIn } = useAssessment()
 
 const segments = computed(() =>
   catalog.categories.map((category, index) => ({
+    index,
     id: category.id,
     name: t(category.name),
     fill: answeredIn(category.id) / category.questions.length,
@@ -26,32 +27,26 @@ const segments = computed(() =>
 </script>
 
 <template>
-  <!-- Docks under the sticky header, so "where am I and how much is left" is
-       answerable at any scroll position without going back to the top. -->
-  <div
-    class="sticky top-(--header-height) z-30 h-(--rail-height) gutter flex items-center border-b border-rule bg-paper/95 backdrop-blur"
+  <nav
+    :aria-label="m('progressLabel')"
+    class="sticky top-(--header-height) z-30 flex h-(--rail-height) border-b border-rule bg-paper"
   >
-    <ol class="flex w-full gap-2" :aria-label="m('progressLabel')">
-      <li v-for="segment in segments" :key="segment.id" class="flex-1">
-        <NuxtLink
-          :to="`/check/${segment.id}`"
-          class="group block"
-          :aria-current="segment.isCurrent ? 'step' : undefined"
-        >
-          <span class="block h-0.5 overflow-hidden bg-rule">
-            <span
-              class="block h-full bg-blue transition-[width] duration-500 ease-editorial"
-              :style="{ width: `${Math.round(segment.fill * 100)}%` }"
-            />
-          </span>
-          <span
-            class="mt-2 block truncate text-caption transition-colors group-hover:text-ink"
-            :class="segment.isCurrent ? 'text-ink' : 'text-ink-faint'"
-          >
-            {{ segment.name }}
-          </span>
-        </NuxtLink>
-      </li>
-    </ol>
-  </div>
+    <NuxtLink
+      v-for="segment in segments"
+      :key="segment.id"
+      :to="`/check/${segment.id}`"
+      class="group relative flex flex-1 items-center justify-center overflow-hidden border-r border-rule transition-colors duration-200 ease-editorial last:border-r-0"
+      :class="segment.isCurrent ? 'bg-white' : 'hover:bg-white/50'"
+      :aria-current="segment.isCurrent ? 'step' : undefined"
+    >
+      <span class="relative z-10 text-caption normal-case tracking-normal">
+        <span class="hidden sm:inline">{{ segment.name }}</span>
+        <span class="sm:hidden">{{ segment.index + 1 }}</span>
+      </span>
+      <span
+        class="absolute inset-y-0 left-0 bg-blue/10 transition-[width] duration-300 ease-editorial"
+        :style="{ width: `${Math.round(segment.fill * 100)}%` }"
+      />
+    </NuxtLink>
+  </nav>
 </template>
