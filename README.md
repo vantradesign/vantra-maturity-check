@@ -31,7 +31,8 @@ Five levels, from **Ad hoc** to **Optimising**, deliberately non-judgemental: th
 packages/
   core/   Scoring engine, question catalog, report renderer — zero dependencies
   cli/    Interactive terminal app (npx @vantra-design/maturity-check)
-  web/    Static assessment site (planned)
+apps/
+  web/    Static assessment site (Nuxt 3 + Tailwind v4, prerendered)
 ```
 
 `core` has no I/O and no `process` access, so the CLI and the web app run the same code and produce byte-identical reports for the same answers.
@@ -77,6 +78,7 @@ pnpm run cli        # run the built CLI
 
 - [CLI usage](packages/cli/README.md)
 - [Engine API](packages/core/README.md)
+- [Web app](apps/web/) — the browser-based self-assessment
 - [Scoring rules](SCORING.md)
 - [Methodology, sources and limitations](docs/METHODOLOGY.md) — where the questions come from, and what the score cannot tell you
 - [Decisions](docs/DECISIONS.md) — why there is no backend, and what the benchmark contract commits to
