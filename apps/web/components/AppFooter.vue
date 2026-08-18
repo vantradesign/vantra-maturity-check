@@ -27,7 +27,8 @@ const repo = 'https://github.com/vantradesign/vantra-maturity-check'
               rel="noopener noreferrer"
               class="underline underline-offset-[0.3em] decoration-1 transition-[text-decoration-color] duration-300 ease-editorial decoration-ink/30 hover:decoration-ink"
             >
-              {{ m('footerMethodology') }}<span aria-hidden="true" class="ml-1 inline-block">↗</span><span class="sr-only">(opens in a new tab)</span>
+              {{ m('footerMethodology') }}<span aria-hidden="true" class="ml-1 inline-block">↗</span
+              ><span class="sr-only">(opens in a new tab)</span>
             </a>
           </li>
           <li>
@@ -37,7 +38,8 @@ const repo = 'https://github.com/vantradesign/vantra-maturity-check'
               rel="noopener noreferrer"
               class="underline underline-offset-[0.3em] decoration-1 transition-[text-decoration-color] duration-300 ease-editorial decoration-ink/30 hover:decoration-ink"
             >
-              {{ m('footerSource') }}<span aria-hidden="true" class="ml-1 inline-block">↗</span><span class="sr-only">(opens in a new tab)</span>
+              {{ m('footerSource') }}<span aria-hidden="true" class="ml-1 inline-block">↗</span
+              ><span class="sr-only">(opens in a new tab)</span>
             </a>
           </li>
         </ul>
@@ -53,7 +55,8 @@ const repo = 'https://github.com/vantradesign/vantra-maturity-check'
               rel="noopener noreferrer"
               class="underline underline-offset-[0.3em] decoration-1 transition-[text-decoration-color] duration-300 ease-editorial decoration-ink/30 hover:decoration-ink"
             >
-              vantra.design<span aria-hidden="true" class="ml-1 inline-block">↗</span><span class="sr-only">(opens in a new tab)</span>
+              vantra.design<span aria-hidden="true" class="ml-1 inline-block">↗</span
+              ><span class="sr-only">(opens in a new tab)</span>
             </a>
           </li>
           <li>
@@ -63,7 +66,8 @@ const repo = 'https://github.com/vantradesign/vantra-maturity-check'
               rel="noopener noreferrer"
               class="underline underline-offset-[0.3em] decoration-1 transition-[text-decoration-color] duration-300 ease-editorial decoration-ink/30 hover:decoration-ink"
             >
-              GitHub<span aria-hidden="true" class="ml-1 inline-block">↗</span><span class="sr-only">(opens in a new tab)</span>
+              GitHub<span aria-hidden="true" class="ml-1 inline-block">↗</span
+              ><span class="sr-only">(opens in a new tab)</span>
             </a>
           </li>
         </ul>

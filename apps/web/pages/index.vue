@@ -50,7 +50,11 @@ useHead(() => ({ title: `${m('introTitle')} — Vantra Maturity Check` }))
       <div class="md:grid md:grid-cols-12 md:gap-x-8">
         <div class="md:col-span-12">
           <ol class="grid gap-px border border-rule bg-rule sm:grid-cols-2">
-            <li v-for="(category, index) in catalog.categories" :key="category.id" class="bg-paper p-6">
+            <li
+              v-for="(category, index) in catalog.categories"
+              :key="category.id"
+              class="bg-paper p-6"
+            >
               <p class="caption">{{ m('introStepLabel', { number: index + 1 }) }}</p>
               <h2 class="mt-2 font-display text-title font-bold">{{ t(category.name) }}</h2>
               <p class="measure mt-2 text-ink-muted">{{ t(category.description) }}</p>

@@ -23,19 +23,18 @@ function barWidth(score: number | null) {
 </script>
 
 <template>
-  <div
-    class="overflow-x-auto"
-    tabindex="0"
-    role="region"
-    :aria-label="m('tableCaption')"
-  >
+  <div class="overflow-x-auto" tabindex="0" role="region" :aria-label="m('tableCaption')">
     <table class="w-full border-collapse text-left">
       <caption class="caption mb-4 text-left normal-case tracking-normal">
-        {{ m('tableCaption') }}
+        {{
+          m('tableCaption')
+        }}
       </caption>
       <thead>
         <tr class="border-y border-ink">
-          <th scope="col" class="caption py-3 pr-6 align-bottom text-ink">{{ m('tableDimension') }}</th>
+          <th scope="col" class="caption py-3 pr-6 align-bottom text-ink">
+            {{ m('tableDimension') }}
+          </th>
           <th scope="col" class="caption py-3 pr-6 align-bottom text-ink">{{ m('tableScore') }}</th>
           <th scope="col" class="caption py-3 pr-6 align-bottom text-ink">{{ m('tableLevel') }}</th>
         </tr>

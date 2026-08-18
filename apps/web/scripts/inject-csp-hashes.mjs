@@ -46,7 +46,9 @@ async function* walkHtml(dir) {
 
 function isExecutable(attrs) {
   const type = /\btype=["']?([^"'\s>]+)/i.exec(attrs)?.[1]?.toLowerCase()
-  return !type || type === 'module' || type === 'text/javascript' || type === 'application/javascript'
+  return (
+    !type || type === 'module' || type === 'text/javascript' || type === 'application/javascript'
+  )
 }
 
 const hashes = new Set()
@@ -105,8 +107,8 @@ const updated = headers
 
 if (rewritten === 0) {
   console.error(
-    "[csp] No Content-Security-Policy line containing \"script-src 'self'\" was found in" +
-      ' _headers. Refusing to ship a policy that would block Nuxt\'s inline config script.',
+    '[csp] No Content-Security-Policy line containing "script-src \'self\'" was found in' +
+      " _headers. Refusing to ship a policy that would block Nuxt's inline config script.",
   )
   process.exit(1)
 }

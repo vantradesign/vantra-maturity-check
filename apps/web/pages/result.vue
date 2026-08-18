@@ -191,23 +191,13 @@ useHead(() => ({ title: `${m('resultNextTitle')} — Vantra Maturity Check` }))
       <p v-if="!ready" class="mt-8 text-ink-muted">{{ m('resultLoading') }}</p>
 
       <!-- ── Shared-view banner ─────────────────────────────────────── -->
-      <div
-        v-if="ready && isSharedView"
-        role="status"
-        class="panel mt-8 px-6 py-5"
-      >
+      <div v-if="ready && isSharedView" role="status" class="panel mt-8 px-6 py-5">
         <p class="font-display text-title font-bold">{{ m('sharedViewTitle') }}</p>
         <p class="mt-2 measure text-ink-muted">{{ m('sharedViewBody') }}</p>
-        <p
-          v-if="droppedFromLink === 1"
-          class="mt-2 text-ink-faint"
-        >
+        <p v-if="droppedFromLink === 1" class="mt-2 text-ink-faint">
           {{ m('resultDroppedOne') }}
         </p>
-        <p
-          v-else-if="droppedFromLink > 1"
-          class="mt-2 text-ink-faint"
-        >
+        <p v-else-if="droppedFromLink > 1" class="mt-2 text-ink-faint">
           {{ m('resultDropped', { count: droppedFromLink }) }}
         </p>
         <div class="mt-4 flex flex-wrap gap-4">
@@ -235,7 +225,9 @@ useHead(() => ({ title: `${m('resultNextTitle')} — Vantra Maturity Check` }))
       <template v-else-if="ready && answered > 0">
         <h1 class="mt-8 font-display text-display max-w-[26ch] text-balance">
           <template v-if="level">
-            {{ m('resultLevelHeading', { level: result.overall.level ?? '—', name: t(level.name) }) }}
+            {{
+              m('resultLevelHeading', { level: result.overall.level ?? '—', name: t(level.name) })
+            }}
           </template>
         </h1>
 
@@ -246,10 +238,7 @@ useHead(() => ({ title: `${m('resultNextTitle')} — Vantra Maturity Check` }))
 
         <p v-if="level" class="mt-4 measure text-lead text-ink-muted">{{ t(level.summary) }}</p>
 
-        <p
-          v-if="!isComplete"
-          class="mt-2 text-ink-faint"
-        >
+        <p v-if="!isComplete" class="mt-2 text-ink-faint">
           {{ m('resultPartial') }}
         </p>
 

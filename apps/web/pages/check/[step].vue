@@ -77,10 +77,7 @@ useHead(() => ({
 
       <nav class="mt-14 md:grid md:grid-cols-12 md:gap-x-8">
         <div class="md:col-span-8 md:col-start-5 flex flex-wrap items-center gap-4">
-          <NuxtLink
-            :to="backTo"
-            class="btn btn-quiet"
-          >
+          <NuxtLink :to="backTo" class="btn btn-quiet">
             {{ m('stepBack') }}
           </NuxtLink>
 
@@ -94,7 +91,9 @@ useHead(() => ({
             }}
           </button>
 
-          <span class="ml-auto text-caption normal-case tracking-normal text-ink-faint tabular-nums">
+          <span
+            class="ml-auto text-caption normal-case tracking-normal text-ink-faint tabular-nums"
+          >
             {{ m('stepAnswered', { answered: answeredHere, total: questionCount }) }}
           </span>
         </div>
